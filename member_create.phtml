@@ -1,0 +1,143 @@
+<!-- Page de création de compte -->
+<h2><i class="fa fa-user"></i> Register</h2>
+
+<!-- PAGE CREATE MEMBER ACCOUNT -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+	<fieldset>
+		<legend><i class="fa fa-book"></i> Identity and personal informations</legend>
+		<ul class="memba">
+            <li>
+				<label for="firstName" class="memba">FirstName :</label>
+				<input id="firstName" type="text" placeholder="Enter a firstname" name="firstname">
+			</li>
+			<li>
+				<label for="lastName" class="memba">LastName :</label>
+				<input id="lastName" type="text" placeholder="Enter a lastname" name="lastname">				
+			</li>
+            <li>
+				<label for="familyName" class="memba">FamilyName(bdo) :</label>
+				<input id="familyName" type="text" placeholder="Your bdo family name" name="familyname">
+			</li>
+            <li>
+				<label for="characterName" class="memba">CharacterName(bdo) :</label>
+				<input id="characterName" type="text" placeholder="Your bdo character name" name="charactername">
+			</li>
+            <li>
+				<label for="characterClass" class="memba">CharacterClass(bdo) :</label>
+				<select name="characterclass" class="lvl">
+                    <option value="default">Your class..</option>
+					<option value="Warrior">Warrior</option>
+					<option value="Ranger">Ranger</option>
+					<option value="Wizard">Wizard</option>
+					<option value="Witch">Witch</option>
+					<option value="Musa">Musa</option>
+					<option value="Maehwa">Maehwa</option>
+					<option value="Sorceress">Sorceress</option>
+					<option value="Dark Knight">Dark Knight</option>
+					<option value="Ninja">Ninja</option>
+					<option value="Valkyrie">Valkyrie</option>
+					<option value="Tamer">Tamer</option>
+					<option value="Kunoichi">Kunoichi</option>
+					<option value="Berserker">Berserker</option>
+					<option value="Striker">Striker</option>
+					<option value="Mystic">Mystic</option>
+					<option value="Lhan">Lhan</option>
+					<option value="Archer">Archer</option>
+					<option value="Shai">Shai</option>
+                    <option value="Guardian">Guardian</option>
+                    <option value="Hashashin">Hashashin</option>
+				</select>				
+			</li>
+			<li>
+				<label for="characterLevel" class="memba">CharacterLevel(bdo) :</label>
+				<select id="characterLevel" name="characterlevel" class="lvl">
+					<?php for($characterLevel = 54; $characterLevel <= 66; $characterLevel++): ?>
+						<option value="<?= $characterLevel ?>"><?= $characterLevel ?></option>
+					<?php endfor; ?>
+				</select>
+			</li>
+            <li>
+				<label for="statusInGuild" class="memba">Status into the guild :</label>				
+				<select name="statusinguild" class="lvl">
+                    <option value="Your status..">Your status..</option>
+					<option value="Recruit">E - Recruit</option>
+					<option value="Master Quarter">D - Master Quarter</option>
+					<option value="General">C - General</option>
+					<option value="Officer">B - Officer</option>
+					<option value="Grand Master">A - Grand Master</option>
+				</select>	
+			</li>
+			<li>
+				<label for="birthDay" class="memba">Birthdate :</label>
+				<select id="birthDay" name="birthday">
+					<?php for($day = 1; $day <= 31; $day++): ?>
+						<option value="<?= $day ?>"><?= $day ?></option>
+					<?php endfor; ?>
+				</select>
+				<span> / </span>
+				<select name="birthmonth">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+				<span> / </span>
+				<select name="birthyear">
+	                <?php for($year = 1960; $year <= date('Y') - 18; $year++): ?>
+	                    <option value="<?= $year; ?>"><?= $year; ?></option>
+	                <?php endfor; ?>
+				</select>
+			</li>
+			<li>
+				<label for="address" class="memba">Address :</label>
+				<textarea id="address" placeholder="Enter an address" name="address" rows="3"></textarea>
+			</li>
+			<li>
+				<label for="city" class="memba">City :</label>
+				<input id="city" type="text" placeholder="Enter your city" name="city">
+			</li>
+			<li>
+				<label for="country" class="memba">Country :</label>
+				<input id="country" class="country" type="text" maxlength="10" placeholder="Enter your country" name="country">
+			</li>
+            			<li>
+				<label for="zipCode" class="memba">Zip Code :</label>
+				<input id="zipCode" class="zip-code" type="text" maxlength="5" name="zipcode">
+			</li>
+			<li>
+				<label for="phone" class="memba">Phone :</label>
+				<input id="phone" class="phone" type="text" maxlength="10" name="phone">
+			</li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend><i class="fa fa-lock"></i> Authentification informations</legend>
+		<ul>
+	        <li>
+	            <label for="email">E-mail :</label>
+	            <input id="email" type="text" placeholder="Email required" name="email" required>
+	        </li>
+	        <li>
+	            <label for="password">Password :</label>
+	            <input id="password" type="password" placeholder="Password required" name="password" required>
+	        </li>
+		</ul>
+	</fieldset>
+
+	<ul>
+		<li>
+			<input class="btn-send" type="submit" name="createMember" value="Create account">
+			<a class="btn-cancel" href="/index.php">Cancel</a>
+		</li>
+	</ul>
+</form>
+<!-- END PAGE CREATE MEMBER ACCOUNT -->

@@ -1,0 +1,79 @@
+{
+  "Sunday": {   
+    "00h15": "nouver & kutum",
+    "02h00": "kzarka",
+    "05h00": "kutum",
+    "09h00": "nouver",
+    "12h00": "kzarka",
+    "16h00": "vell",
+    "19h00": "garmoth",
+    "22h15": "nouver & kzarka",
+    "23h15": ""
+  },
+  "Monday": {
+    "00h15": "karanda & kutum",
+    "02h00": "karanda",
+    "05h00": "kzarka",
+    "09h00": "kzarka",
+    "12h00": "offin",
+    "16h00": "kutum",
+    "19h00": "nouver",
+    "22h15": "kzarka",
+    "23h15": ""
+  },
+  "Tuesday": {
+    "00h15": "karanda",
+    "02h00": "kutum",
+    "05h00": "kzarka",
+    "09h00": "nouver",
+    "12h00": "kutum",
+    "16h00": "nouver",
+    "19h00": "karanda",
+    "22h15": "garmoth",
+    "23h15": ""
+  },
+  "Wednesday": {
+    "00h15": "kutum & kzarka",
+    "02h00": "karanda",
+    "05h00": "kzarka",
+    "09h00": "karanda",
+    "12h00": "m.a.j",
+    "16h00": "kutum & offin",
+    "19h00": "vell",
+    "22h15": "karanda & kzarka",
+    "23h15": "quint & muraka"
+  },
+  "Thursday": {
+    "00h15": "nouver",
+    "02h00": "kutum",
+    "05h00": "nouver",
+    "09h00": "kutum",
+    "12h00": "nouver",
+    "16h00": "kzarka",
+    "19h00": "kutum",
+    "22h15": "garmoth",
+    "23h15": ""
+  },
+  "Friday": {
+    "00h15": "karanda & kzarka",
+    "02h00": "nouver",
+    "05h00": "karanda",
+    "09h00": "kutum",
+    "12h00": "karanda",
+    "16h00": "nouver",
+    "19h00": "kzarka",
+    "22h15": "kutum & kzarka",
+    "23h15": ""
+  },
+  "Saturday": {
+    "00h15": "karanda",
+    "02h00": "offin",
+    "05h00": "nouver",
+    "09h00": "kutum",
+    "12h00": "nouver",
+    "16h00": "quint & muraka",
+    "19h00": "karanda & kzarka",
+    "22h15": "conquest",
+    "23h15": ""
+  }
+}

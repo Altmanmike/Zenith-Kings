@@ -1,0 +1,36 @@
+<!-- Page de connexion de compte -->
+<h2><i class="fa fa-lock"></i> Login</h2>
+
+<!-- Affichage de retour messages -->
+<?php if($successMessage): ?>
+    <p><?php printSuc($successMessage); ?></p>
+<?php endif; ?>
+
+<?php if($errorMessage): ?>
+    <p><?php printEach($errorMessage); ?></p>
+<?php endif; ?>
+
+<!-- PAGE LOGIN -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">    
+	<fieldset>
+		<legend><i class="fa fa-lock"></i> Authentification informations</legend>
+		<ul>
+			<li>
+				<label for="email">E-mail :</label>
+				<input id="email" type="text" placeholder="Enter your mail" name="email">				
+			</li>
+			<li>
+				<label for="password">Password :</label>
+				<input id="password" type="password" placeholder="Enter your password" name="password">				
+			</li>
+		</ul>
+	</fieldset>
+
+	<ul>
+		<li>
+			<input class="btn-send" type="submit" name="loginMember" value="Connexion">
+			<a class="btn-cancel" href="index.php">Cancel</a>
+		</li>
+	</ul>
+</form>
+<!-- END PAGE LOGIN -->

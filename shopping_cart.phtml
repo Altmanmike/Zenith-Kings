@@ -1,0 +1,70 @@
+<!-- Page de gestion d'une commande: éditions et suppression des produits ajoutés par un membre à son panier -->
+<h2><i class="fas fa-shopping-cart"></i> Shopping</h2>
+
+<!-- PAGE SHOPPING CART -->
+<table class="admin">
+    <caption>Produits ajoutés au panier</caption>
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Delete</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($prodsInCarts as $prodsInCart): ?>
+            <tr>
+                <td><img src="img/products/<?= htmlspecialchars($prodsInCart['Photo']) ?>" alt="<?= htmlspecialchars($prodsInCart['Name']) ?>"></td>              
+                <td><?= htmlspecialchars($prodsInCart['Name']) ?></td>
+                <td><?= htmlspecialchars($prodsInCart['Description']) ?></td>
+                <td><?= htmlspecialchars($prodsInCart['QuantityOrdered']) ?></td>
+                <td><?= htmlspecialchars($prodsInCart['SalePrice']) ?> €</td>
+                <td><a href="shopping_cart_delete.php?id=<?= intval($prodsInCart['Id']) ?>&memberId=<?= intval($_SESSION['member']['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+            </tr>
+        <?php endforeach ?>       
+    </tbody>
+</table>
+<table class="admin">
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="justif">Total (HT + HP):</td>
+            <td class="justif"><?= htmlspecialchars(floordec($totalHTHP)) ?> €</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="justif">Total TTC:</td>
+            <td class="justif"><?= htmlspecialchars(floordec($totalTTCHP)) ?> €</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="justif">Cost of portage:</td>            
+            <td class="justif"><?= htmlspecialchars($orders['CostOfPortage']) ?> %</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="justif"><span>Total to pay:</span></td>
+            <td class="justif"><span><?= htmlspecialchars(floordec($totalTTC)) ?> €</span></td>
+        </tr>
+    </tbody>
+</table>
+<ul class="nopoint">
+    <li>
+        <a class="btn-cancel" href="products.php">Add more to cart</a>
+        <?php if(!empty($totalHTHP)): ?>
+            <a class="btn-send" href="payment.php?id=<?= intval($_GET['id']) ?>">Payment right now!</a>
+        <?php endif; ?>
+    </li>
+</ul>
+<!-- END PAGE SHOPPING CART --> 

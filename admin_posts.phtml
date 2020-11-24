@@ -1,0 +1,35 @@
+<!-- Page d'administration: éditions et suppression d'articles (et messages) -->
+<h2><i class="fa fa-cogs"></i> Posts</h2>
+
+<!-- ADMIN PAGE POSTS -->
+<nav>
+    <a href="admin_post_add.php">Rédiger un nouvel article</a>
+</nav>
+
+<table class="admin">
+    <caption>Liste des articles</caption>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>N°</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($posts as $post): ?>
+            <tr>
+                <td><a href="show_post.php?id=<?= intval($post['Id']) ?>" target="_blank"><?= htmlspecialchars($post['Title']) ?></a></td>
+                <td><?= htmlspecialchars($post['Id']) ?></td>
+                <td><?= htmlspecialchars($post['FirstName']) ?> <?= htmlspecialchars($post['LastName']) ?></td>
+                <td><?= htmlspecialchars($post['Category_Name']) ?></td>
+                <td>
+                    <a class="edit" href="admin_post_edit.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-pencil"></i></a>
+                    <a class="remove" href="admin_post_delete.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-remove"></i></a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<!-- END ADMIN PAGE POSTS -->

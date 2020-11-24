@@ -1,0 +1,40 @@
+<!-- Page de présentation du leader et de ses officiers -->
+<h2><i class="fas fa-meteor"></i> Wars</h2>
+
+<!-- PAGE NODE WARS -->    
+<section id="wars">    
+    <h3>Lastest Wars</h3>
+    <?php foreach($wars as $war): ?>    
+        <div class="warInfos">
+            <div class="warInfo">
+                <img src="img/wars/<?= $war['UsLogo'] ?>.jpg" alt="our guild logo" >
+                <h4 class="guildName"><?= htmlspecialchars($war['Us']) ?></h4>
+            </div>
+            <div class="warInfo1">                
+                <p class="versus">VS</p>
+            </div>
+            <div class="warInfo2">
+                <img src="img/wars/<?= $war['OpponentLogo'] ?>.jpg" alt="them guild logo" >
+                <h4 class="guildName"><?= htmlspecialchars($war['Opponent']) ?></h4>
+            </div>
+            <div class="warInfo3">
+                <p>Jour</p>
+                <p class="day"><?= htmlspecialchars($war['Day']) ?></p>
+                <p> le <?= htmlspecialchars(substr($war['CreationTimestamp'], 8, 2)) ?>/<?= htmlspecialchars(substr($war['CreationTimestamp'], 5, 2)) ?></p>
+            </div>
+            <div class="warInfo4">
+                <p>Noeud</p>
+                <p class="node"><?= htmlspecialchars($war['Node']) ?></p>
+            </div>
+            <div class="warInfo5">
+                <p>Tier</p>
+                <p class="tier"><?= htmlspecialchars($war['Tier']) ?></p>
+            </div>
+            <div class="warInfo6">
+                <p>Scores</p>
+                <h4 class="score"><?= htmlspecialchars($war['Score']) ?></h4>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</section>
+<!-- END PAGE NODE WARS -->

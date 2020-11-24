@@ -1,0 +1,23 @@
+<!-- Page des informations d'un produit du site en particulier -->
+<h2><i class="fas fa-globe-europe"></i> Product</h2>
+
+<!-- PAGE PRODUCT INFOS -->
+<table class="admin-prod">      
+    <caption>Check product infos</caption>
+    <tbody>        
+        <tr>
+            <td>    
+                <p><strong><?= $product['Name']; ?></strong></p>                   
+                <img src="img/products/<?= $product['Photo']; ?>" alt="<?= $product['Name']; ?>">
+                <p><?= $product['Description']; ?></p>
+                <p><strong><?= number_format($product['SalePrice'], 2) ?></strong> €</p>
+            </td>                
+        </tr>
+    </tbody>
+</table>
+<?php if(isAuth()): ?>
+    <a class="btn-send" href="shopping_cart_add.php?id=<?= intval($_GET['id']) ?>&memberId=<?= intval($_SESSION['member']['Id']) ?>">ADD TO CART <i class="fas fa-shopping-cart"></i></a>    
+<?php endif; ?>
+<a class="btn-back1" href="products.php">Back to list<i class="fas fa-arrow-right"></i></a>
+<a class="btn-back2" href="products.php"><i class="fas fa-arrow-left"></i> Back to list</a>
+<!-- END PAGE PRODUCT INFOS -->

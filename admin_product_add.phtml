@@ -1,0 +1,51 @@
+<!-- Page d'ajout d'un produit -->
+<h2><i class="fas fa-box"></i> Add Product</h2>
+
+<!-- Affichage de retour messages -->
+<?php if($successMessage): ?>
+    <p><?php printSuc($successMessage); ?></p>
+<?php endif; ?>
+
+<?php if($errorMessage): ?>
+    <p><?php printEach($errorMessage); ?></p>
+<?php endif; ?>
+
+<!-- PAGE ADMIN ADD PRODUCT -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend><i class="fa fa-check"></i> Characteristics (plz use picture in png, 400x400 pixels and same name as product) </legend>
+        <ul>
+            <li>
+                <label for="name">Name :</label>
+                <input id="name" type="text" name="name">
+            </li>
+            <li>
+                <label class="addphoto" for="addphoto">Photo :</label>
+                <input id="addphoto" type="file" name="addPhoto">
+            </li>
+            <li>
+                <label for="description">Description :</label>
+                <input id="description" type="textarea" name="description">
+            </li>
+            <li>
+                <label for="quantityinstock">QuantityInStock :</label>
+                <input id="quantityinstock" type="text" name="quantityInStock" value="">
+            </li>
+            <li>
+                <label for="buyprice">BuyPrice :</label>
+                <input id="buyprice" type="text" name="buyPrice" value="">
+            </li> 
+            <li>
+                <label for="saleprice">SalePrice :</label>
+                <input id="saleprice" type="text" name="salePrice" value="">
+            </li> 
+        </ul>
+    </fieldset>
+    <ul>
+        <li>
+            <input class="btn-send" type="submit" name="addProduct" value="Add">
+            <a class="btn-cancel" href="admin_products.php">Cancel</a>
+        </li>
+    </ul>
+</form>
+<!-- END PAGE ADMIN ADD PRODUCT -->

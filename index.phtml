@@ -1,0 +1,55 @@
+<!-- Page d'accueil du site web: corps de la page -->
+<h2><i class="fas fa-pen-nib"></i> ZK Posts</h2>
+
+<!-- INDEX PAGE -->
+    <section class="post-view">
+        <h3>See our posts</h3>
+        <div id="categoryPosts">
+            <a id="all"         href="?category=ALL">See All </a>
+            <a id="bdo"         href="?category=BDO">BDO </a>
+            <a id="enhancing"   href="?category=ENHANCING">Enhancing </a>
+            <a id="event"       href="?category=EVENT">Event </a>
+            <a id="tournament"  href="?category=TOURNAMENT">Tournament </a>
+        </div>
+        <?php foreach ($postLimits as $postLimit): ?>    
+            <article class="post-banner">                             
+                <!-- Lien vers l'article du blog détaillé avec tous les commentaires -->                
+                <h3 class="title-view"><a href="show_post.php?id=<?= intval($postLimit['Id']) ?>"><?= htmlspecialchars($postLimit['Title']) ?></a></h3>
+                <div class="contents">
+                    <img src="img/posts/<?= $postLimit['Picture'] ?>" alt="">                  
+                    <div class="tinyprobs">
+                        <?= substr($postLimit['Contents'], 0, 600) ?><?php if(strlen($postLimit['Contents']) > 600) {echo ' [...]';} ?> 
+                    </div>                      
+                </div>                
+                <small>
+                    <a class="readmore" href="show_post.php?id=<?= intval($postLimit['Id']) ?>">READ MORE</a>
+                    <i class="far fa-calendar-check"></i> Wrote by <?= htmlspecialchars($postLimit['FamilyName']) ?> <?= htmlspecialchars($postLimit['CharacterName']) ?>
+                    at <?= htmlspecialchars(date('d/m/Y H\Hi', strtotime($postLimit['CreationTimestamp']))) ?>, <i class="far fa-folder-open"></i> <?= htmlspecialchars($postLimit['Name']) ?>
+                </small>
+            </article>
+        <?php endforeach; ?>
+    </section>
+
+    <!-- Pagination des articles -->
+    <?php for($i=1;$i<=$nbPages;$i++): ?>
+    <?php { ?>
+            <?php if( $i == $currentPage ): ?>
+            <?php
+                    {
+                        echo $i.' ';
+                    }
+                    else: {
+                        if(!empty($_GET['category']))
+                        {
+                            echo '<a href="index.php?category='.$_GET['category'].'&page='.$i.'">'.$i.'</a>';
+                        }
+                        else
+                        {
+                            echo '<a href="index.php?page='.$i.'">'.$i.'</a>';
+                        }                       
+                    }
+            ?>
+            <?php endif; ?>
+    <?php } ?>
+    <?php endfor; ?>
+<!-- END INDEX PAGE -->

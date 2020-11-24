@@ -1,0 +1,44 @@
+<!-- Page de paiement d'une commande: liste des produits ajoutés par un membre à son panier -->
+<h2><i class="fas fa-credit-card"></i> Payment</h2>
+
+<!-- PAGE PAYMENT -->
+<table class="payment">
+    <caption>Recapitulatif panier</caption>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Photo</th>            
+            <th>Price</th>                        
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($prodsInCarts as $prodsInCart): ?>
+            <tr>                              
+                <td><?= htmlspecialchars($prodsInCart['Name']) ?></td>                
+                <td><?= htmlspecialchars($prodsInCart['QuantityOrdered']) ?></td>
+                <td><img src="img/products/<?= htmlspecialchars($prodsInCart['Photo']) ?>" alt="<?= $prodsInCart['Name']; ?>"></td>
+                <td><?= htmlspecialchars($prodsInCart['SalePrice']) ?> €</td>                
+            </tr>
+        <?php endforeach ?>       
+    </tbody>
+</table>
+<table class="payment">
+    <tbody>
+        <tr>
+            <td class="justif">Total (HT + HP):</td>
+            <td class="justif"><?= htmlspecialchars(floordec($orders['SumPrices'])) ?> €</td>
+        </tr>
+        <tr>
+            <td class="justif"><span>Total payment:</span></td>
+            <td class="justif"><span><?= htmlspecialchars(floordec($orders['Total'])) ?> €</span></td>
+        </tr>
+    </tbody>
+</table>
+<ul class="nopoint">
+    <li>
+        <a class="btn-cancel" href="shopping_cart.php?id=<?= intval($_GET['id']) ?>">Return to cart</a>
+        <a class="btn-send" href="payment_validation.php?id=<?= intval($_GET['id']) ?>">Valid payment now!</a>        
+    </li>
+</ul>
+<!-- END PAGE PAYMENT -->

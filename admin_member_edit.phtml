@@ -1,0 +1,79 @@
+<!-- Page d'édition des informations d'un membre -->
+<h2><i class="fa fa-user"></i> Edit Member</h2>
+
+<!-- PAGE ADMIN EDIT MEMBER -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+	<fieldset>
+		<legend><i class="fa fa-book"></i> Identity and personal informations</legend>
+		<ul>
+            <li>
+				<label for="firstName" class="memba">FirstName :</label>
+				<input id="firstName" type="text" name="firstname" value="<?= $member['FirstName'] ?>">
+			</li>
+			<li>
+				<label for="lastName" class="memba">LastName :</label>
+				<input id="lastName" type="text" name="lastname" value="<?= $member['LastName'] ?>">				
+			</li>
+            <li>
+				<label for="familyName" class="memba">FamilyName(bdo) :</label>
+				<input id="familyName" type="text" name="familyname" value="<?= $member['FamilyName'] ?>">
+			</li>
+            <li>
+				<label for="characterName" class="memba">CharacterName(bdo) :</label>
+				<input id="characterName" type="text" name="charactername" value="<?= $member['CharacterName'] ?>">
+			</li>
+            <li>
+				<label for="characterClass" class="memba">CharacterClass(bdo) :</label>
+				<select name="characterclass" class="lvl">
+                    <option value="<?= $member['CharacterClass'] ?>"><?= $member['CharacterClass'] ?></option>
+					<option value="Warrior">Warrior</option>
+					<option value="Ranger">Ranger</option>
+					<option value="Wizard">Wizard</option>
+					<option value="Witch">Witch</option>
+					<option value="Musa">Musa</option>
+					<option value="Maehwa">Maehwa</option>
+					<option value="Sorceress">Sorceress</option>
+					<option value="Dark Knight">Dark Knight</option>
+					<option value="Ninja">Ninja</option>
+					<option value="Valkyrie">Valkyrie</option>
+					<option value="Tamer">Tamer</option>
+					<option value="Kunoichi">Kunoichi</option>
+					<option value="Berserker">Berserker</option>
+					<option value="Striker">Striker</option>
+					<option value="Mystic">Mystic</option>
+					<option value="Lhan">Lhan</option>
+					<option value="Archer">Archer</option>
+					<option value="Shai">Shai</option>
+                    <option value="Guardian">Guardian</option>
+				</select>				
+			</li>
+			<li>
+				<label for="characterLevel" class="memba">CharacterLevel(bdo) :</label>
+				<select id="characterLevel" name="characterlevel" class="lvl">
+                        <option value="<?= $member['CharacterLevel'] ?>"><?= $member['CharacterLevel'] ?></option>
+					<?php for($characterLevel = 54; $characterLevel <= 64; $characterLevel++): ?>
+						<option value="<?= $characterLevel ?>"><?= $characterLevel ?></option>
+					<?php endfor; ?>
+				</select>
+			</li>
+            <li>
+				<label for="statusInGuild" class="memba">Status into the guild :</label>				
+				<select name="statusinguild" class="lvl">
+                    <option value="<?= $member['StatusInGuild'] ?>"><?= $member['StatusInGuild'] ?></option>
+					<option value="New">New</option>
+					<option value="Master Quarter">Master Quarter</option>
+					<option value="General">General</option>
+					<option value="Officer">Officer</option>
+					<option value="Grand Master">Grand Master</option>
+				</select>	
+			</li>
+        </ul>
+	</fieldset>
+    <ul>
+		<li>
+			<input class="btn-send" type="submit" name="editMember" value="Update">
+			<a class="btn-cancel" href="admin_members.php">Cancel</a>
+		</li>
+	</ul>
+</form>
+<!-- END PAGE ADMIN EDIT MEMBER -->

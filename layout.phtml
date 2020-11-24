@@ -1,0 +1,357 @@
+<?php require 'src/header.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ZK BDO GUILD WEBSITE</title>
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+    <link rel="icon" href="favicon.ico" />
+    
+    <!-- CSS -->    
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css" />    
+    <link rel="stylesheet" type="text/css" href="css/normalize-3.0.3.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.3.0.min.css /">    
+    <link rel="stylesheet" type="text/css" href="css/style.css" id="css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat|Roboto|Turret+Road|Oswald|Josefin+Sans|Teko|Righteous|Prompt|Orbitron|Lexend+Peta|Concert+One|Russo+One" />
+    
+    <!-- FONT AWESOME -->
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />-->
+    <!-- New system Font Awesome with Kit -->
+    <script src="https://kit.fontawesome.com/d40df77f00.js" crossorigin="anonymous"></script>
+
+    <!-- LIBRAIRY jQuery -->    
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>    
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    <!-- FLEXSLIDER -->
+    <script src="js/jquery.flexslider.js"></script>    
+    <script src="js/flexload-carroussel.js"></script>
+    <script src="js/flexload-wallpapers.js"></script>
+    
+    <!-- JAVASCRIPT -->    
+    <script src="js/to-top.js"></script>
+    <script src="js/bdoClasses.js"></script>    
+</head>
+<body>
+
+    <!-- En-tête commune -->
+    <header>        
+        <hr>
+        <a href=""><h1 class="maintitle">ZENITH KINGS</h1></a>        
+    </header>
+
+    <!-- Interface utilisateur -->
+    <nav>
+        <ul>
+            <li id="start"><a href="#"><i class="fas fa-bars"></i></a>                
+                <ul class="mob">
+                    <li><a class="first" href="index.php"> Home</a></li>
+                    <li><a class="first" href="products.php"> Products</a></li>
+                    <li><a class="first" href="members.php"> Members</a> </li>
+                    <li><a class="first" href="aboutbdo.php"> About BDO</a></li>
+                    <li><a class="first" href="wars.php"> Wars</a></li>
+                    <li><a class="first" href="links.php"> Links</a></li>
+                    <li><a class="first" href="contact.php"> Contact</a></li>
+                    <li><a class="first" href="wallpapers.php"> Wallpapers</a></li>
+                    <li><a class="first" href="stream.php"><i class="fab fa-twitch"></i> Stream</a></li>
+                </ul>
+            </li>
+        </ul>
+       <a class="menu" href="index.php">        
+            <svg>
+                <g transform="translate(0.000000,60.000000) scale(0.010000,-0.0100000)"
+                fill="#000000" stroke="none">
+                    <path d="M3698 5710 l-1357 -5 -106 -89 c-156 -130 -745 -611 -925 -756 -194
+                    -156 -220 -180 -220 -197 0 -12 28 -14 177 -9 98 3 509 8 913 11 404 3 811 8
+                    903 12 167 6 169 6 165 -15 -1 -12 -66 -85 -143 -164 -76 -79 -223 -228 -325
+                    -333 -102 -104 -305 -314 -450 -465 -146 -151 -334 -347 -420 -435 -85 -88
+                    -213 -221 -284 -295 -72 -74 -203 -209 -291 -300 -451 -464 -558 -575 -663
+                    -683 -64 -64 -112 -120 -108 -125 4 -4 708 -5 1564 -3 l1556 3 181 162 c171
+                    154 592 526 645 572 257 221 345 303 334 313 -5 4 -256 5 -559 2 -823 -9
+                    -1397 -3 -1393 13 3 14 121 138 496 521 224 229 364 374 712 735 541 562 849
+                    880 1016 1050 373 381 462 475 458 482 -3 5 -121 7 -262 6 -141 -2 -868 -5
+                    -1614 -8z"/> <!-- Z path -->
+                    <path d="M6622 5710 l-543 -5 -714 -714 -714 -715 0 -492 0 -491 716 -717 716
+                    -716 237 0 c130 0 453 -3 718 -7 365 -5 482 -3 482 5 0 10 -1341 1350 -1768
+                    1767 -74 72 -138 138 -143 147 -7 14 126 151 729 751 405 404 838 833 961 954
+                    140 137 222 224 217 231 -5 9 -57 11 -179 10 -95 -2 -416 -5 -715 -8z"/> <!-- K path -->
+                </g>
+            </svg> Home</a>        
+        <a class="menu" href="products.php"> Products</a>
+        <a class="menu" href="members.php"> Members</a>        
+        <a class="menu" href="aboutbdo.php"> About BDO</a>
+        <a class="menu" href="wars.php"> Wars</a>
+        <a class="menu" href="links.php"> Links</a>        
+        <a class="menu" href="contact.php"> Contact</a>
+        <a class="menu" href="wallpapers.php"> Wallpapers</a>
+        <a class="menu" href="stream.php"><i class="fab fa-twitch"></i> Stream</a>
+        
+        <ul class="link-list">
+            <?php if(getAdmin() == 1): ?>
+                <p class="welcome">Salut <strong><?= $_SESSION['member']['FirstName'] ?></strong> !</p>
+                <a class="btn-send" href="admin_panel.php">Admin Panel</a>
+                <a class="btn-send" href="profile_infos.php">Profile infos</a>
+                <a class="btn-send" href="shopping_cart.php?id=<?= $order['Id'] ?>"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <li class="layout-right">                    
+                    <a class="btn-send" href="member_logout.php">Disconnection</a>
+                </li>
+            <?php elseif(isAuth() == True): ?>
+                <p class="welcome">Hi! <strong><?= $_SESSION['member']['FirstName'] ?></strong> !</p>            
+                <a class="btn-send" href="profile_infos.php">Profile infos</a>
+                <a class="btn-send" href="shopping_cart.php?id=<?= $order['Id'] ?>"><i class="fas fa-shopping-cart"></i> Cart</a>            
+                <li class="layout-right">                    
+                    <a class="btn-send" href="member_logout.php">Disconnection</a>
+                </li>
+            <?php else: ?>
+                <li>
+                    <a class="btn-send" href="member_create.php">Create account</a>
+                </li>
+                <li class="layout-right">
+                    <a class="btn-send" href="member_login.php">Connexion</a>                    
+                </li>
+            <?php endif; ?>
+        </ul>        
+    </nav>
+
+    <main>
+
+        <!-- GO TO TOP BUTTON EFFECT -->
+        <div id="scrollUp" >
+            <a href="#top"><img src="img/zk_400x400.png" alt="boutton go top logo" ></a>
+        </div>
+        
+        <!-- HEADER WITH BACKGROUND -->
+        <canvas id="canvas" width="1920" height="600"></canvas>
+        
+        <!-- --------------------------------------------------------------------- -->
+        <!-- ASIDE (mise en forme & liens pris sur inventglobal -->
+
+        <aside class="rightSide">		
+
+            <div class="right-banner1">
+                <section id="rb1">
+                    <!-- BANNER 1: Facebook bdo official widget -->                    
+                    <div>                        
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBlackDesertOnline%2F&tabs=timeline&width=300&height=500&small_header=true&adapt_container_width=false&hide_cover=true&show_facepile=false&appId" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>                                                  
+                    </div>
+                    <!-- END BANNER 1 -->
+                </section>
+            </div>
+                
+            <div class="right-banner4">
+                <section id="rb4">
+                    <!-- BANNER 4: Youtube BDO Channel -->
+                    <h3>Video of the Week</h3>
+                    <div>                        
+                        <iframe width="300" height="200" src="https://www.youtube.com/embed/-B-84a5DrGk?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                      
+                    </div>
+                    <!-- END BANNER 4 -->
+                </section>
+            </div>
+                
+           <div class="right-banner2">
+                <section id="rb2">                   
+                </section>
+            </div>
+
+            <div class="right-banner3">
+                <section id="rb3">
+                    <!-- BANNER 3: map & nodes for workers to make silvers efficient -->                    
+                    <div>                        
+                        <a href="https://www.invenglobal.com/black/map" target="_blank"><img src="https://static.invenglobal.com/upload/image/2017/08/28/i1503987979704875.jpeg"/></a>                            
+                    </div>
+                    <!-- END BANNER 3 -->
+                </section>
+            </div>
+        </aside>
+
+        <!-- END ASIDE RIGHT -->
+        <!-- --------------------------------------------------------------------- -->
+        <!-- ASIDE LEFT -->
+
+        <aside class="leftSide">
+            
+            <div class="left-banner3">
+                <section id="lb3">
+                    <!-- BANNER 3:  bdo world boss timer europe servers -->                    
+                    <div class="boss-timer">
+                        <?php
+                        
+                            $json_boss_src = file_get_contents("json/Bosses_EU_Timer.json");
+                            $json_boss_data = json_decode($json_boss_src, true);
+                            //var_dump($json_boss_data);
+                            date_default_timezone_set('Europe/Paris');        
+                            $today = getdate();                            
+                            $localHours = $today['hours'].'h'.$today['minutes'];
+                            $horaires = ["00h00", "00h15", "02h00", "05h00", "09h00", "12h00", "16h00", "19h00", "22h15"];
+                        
+                            foreach($json_boss_data as $day => $dayBosses):
+                            {   
+                                //var_dump($dayBosses);                            
+                                if($day == $today['weekday'])
+                                {
+                                    //echo $day.': ';
+                                    $cpt = 0;
+                                    foreach($dayBosses as $hours => $boss):
+                                    {
+                                        $hb = substr($hours, 0, 2);
+                                        $mb = substr($hours, 3, 2);
+                                        
+                                        $horairesH = substr($horaires[$cpt], 0, 2);
+                                        $horairesM = substr($horaires[$cpt], 3, 2);
+                                        //echo $boss.' ';
+                                        
+                                        if( ($horairesH <= $today['hours']) && ($today['hours'] <= $hb) )
+                                        {
+                                            $bossName = $boss;
+                                            $bossTime = $hours;
+                                        }
+                                        $cpt++;
+                                    }
+                                    endforeach;
+                                    echo '.';
+                                    break;
+                                }                                
+                            }
+                            endforeach;
+                        ?>    
+                        <div><h3>Prochain Boss: </h3></div>
+                        <div id="boss-picture"><img src="img/boss/<?= $bossName ?>.png" alt="world boss"></div>
+                        <div id="boss-name"><h3><?= $bossName ?> a <?= $bossTime ?></h3></div>                       
+                    </div>                    
+                    <!-- END BANNER 3 -->
+                </section>
+            </div>
+
+            <div class="left-banner2">
+                <section class="recent-posts-lb2">
+                    <!-- BANNER 2:  -->                    
+                    <!-- END BANNER 2 -->
+                </section>
+            </div>
+            
+            <div class="left-banner1">
+                <section id="lb1">
+                    <!-- BANNER 1: Twitter zk widget -->                    
+                    <a class="twitter-timeline" data-width="300" data-height="700" data-theme="dark" data-link-color="#E95F28" href="https://twitter.com/zenith_kings?ref_src=twsrc%5Etfw">Tweets by zenith_kings</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <!-- END BANNER 1 -->
+                </section>
+            </div>
+        </aside>
+
+        <!-- END ASIDE LEFT -->        
+        <!-- --------------------------------------------------------------------- -->
+        
+        
+        <!-- TEMPLATE PHTML spécifié par le programme PHP -->
+        <?php include $template.'.phtml' ?>
+        
+        
+        <!-- PRODUCTS ROULETTE -->        
+        <div class="flexslider-carousel">    
+           <ul class="slides">
+                <li>
+                  <img src="img/products/Cap Black.png" alt="Cap ZK black" title="Cap ZK Black" />
+                </li>
+                <li>
+                  <img src="img/products/Cap B&O.png" alt="Cap ZK black & orange" title="Cap ZK Black & Orange" />
+                </li>
+                <li>
+                  <img src="img/products/TShirt Green.png" alt="TeeShirt green" title="TShirt ZK Green" />
+                </li>
+                <li>
+                  <img src="img/products/TShirt Blue.png" alt="TeeShirt blue" title="TShirt ZK Blue" />
+                </li>
+                <li>
+                  <img src="img/products/TShirt White.png" alt="TeeShirt white" title="TShirt ZK White" />
+                </li>
+                <li>
+                  <img src="img/products/Sweat Magenta.png" alt="Sweat magenta & yellow" title="Sweat ZK Magenta & Yellow" />
+                </li>
+                <li>
+                  <img src="img/products/Sweat White.png" alt="Sweat white & blue" title="Sweat ZK White & Blue" />
+                </li>
+                <li>
+                  <img src="img/products/Sweat Blue.png" alt="Sweat blue & yellow" title="Sweat ZK Blue & Yellow" />
+                </li>
+                <li>
+                  <img src="img/products/Mug Black&White.png" alt="Mug black & white" title="Mug ZK Black & White" />
+                </li>
+               <li>
+                  <img src="img/products/Mug Orange&White.png" alt="Mug orange & white" title="Mug ZK Orange & White" />
+                </li>
+            </ul>
+        </div>
+        
+        <!-- SYSTEME REQUIREMENTS & BUY INFOS -->
+            
+        <div class="sysreq-infos">
+            
+            <iframe class="trailer" width="560" height="315" src="https://www.youtube.com/embed/uhsd5YvoWaM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <p class="infos-prevent">So, is your gaming PC capable of running Black Desert Online? Let us know!</p>
+            
+            <div class="sysreq-contents">                
+                <h5 class="req">System Requirements</h5>
+                <div class="sysreq">                    
+                    <div class="sysreq-left">
+                        <ul>
+                            <h5><strong>Minimum:</strong><br></h5>
+                            <ul class="sysreq-ul">
+                                <li><strong>OS:</strong> Windows 7 or higher (32-bit or 64-bit)<br></li>
+                                <li><strong>Processor:</strong> Intel Core i3-530 2.9 GHz<br></li>
+                                <li><strong>Memory:</strong> 4 GB RAM<br></li>
+                                <li><strong>Graphics:</strong> GTS 250, GeForce 9800 GTX, Radeon HD 3870 X2<br></li>
+                                <li><strong>Network:</strong> Broadband Internet connection<br></li>
+                                <li><strong>Storage:</strong> 27 GB available space<br></li>
+                                <li><strong>Screen Resolution:</strong> 1280x720 px</li>
+                            </ul>
+                        </ul>
+                    </div>                    
+                    <div class="sysreq-right">
+                        <ul>
+                            <h5><strong>Recommended:</strong><br></h5>
+                            <ul class="sysreq-ul">                                 
+                                <li><strong>OS:</strong> Windows 7 or higher (32-bit or 64-bit)<br></li>
+                                <li><strong>Processor:</strong> Intel Core i5-650 3.2GHz<br></li>
+                                <li><strong>Memory:</strong> 8 GB RAM<br></li>
+                                <li><strong>Graphics:</strong> NVIDIA GTX 970, AMD RX 480<br></li>
+                                <li><strong>Network:</strong> Broadband Internet connection<br></li>
+                                <li><strong>Storage:</strong> 27 GB available space<br></li>
+                                <li><strong>Screen Resolution:</strong> 1920x1080 px or higher</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buy-infos">
+                <ul>
+                   <li>
+                       <a class="website-shops" href="https://store.steampowered.com" target="_blank" ><p><strong>Plateform steam by Steam website: </strong></p>
+                       <iframe class="tobuy" src="https://store.steampowered.com/widget/582660/149597/" frameborder="0" width="640" height="190"></iframe></a>
+                    </li>
+                    <li>                        
+                        <a class="website-shops" href="https://www.blackdesertonline.com/shop/package" target="_blank" ><p><strong>Plateform windows by BDO website: </strong></p><img src="img/winshop/9euros.PNG"></a>
+                    </li>
+                </ul>               
+            </div>
+            
+        </div>
+            
+        <!-- OFFICIALS LINKS -->
+        <div id="official-links">
+            <a href="https://www.pearlabyss.com/"><img src="img/pearlabyss.png"></a>
+            <a href="https://www.kakaogamescorp.com/"><img src="img/kakao.png"></a>
+        </div>
+        
+        <!-- JavaScript de l'application -->
+        <script src="js/main.js"></script>   
+    </main>
+    
+    <!-- FOOTER COMMUN -->
+    <?php require 'src/footer.phtml'; ?>

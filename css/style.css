@@ -1,0 +1,2433 @@
+/* FONT FACE */
+/* Appelle les polices de la page */
+@font-face {
+	font-family:"Android Assassin";
+	src:url("../fonts/android_assassin/Android_Assassin.eot?") format("eot"),
+	url("../fonts/android_assassin/Android_Assassin.woff") format("woff"),
+	url("../fonts/android_assassin/Android_Assassin.ttf") format("truetype"),
+	url("../fonts/android_assassin/Android_Assassin.svg#AndroidAssassin") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ----------------------- GLOBAL --------------------------- */
+/* ---------------------------------------------------------- */
+
+/* Balises et class appelés à plusieurs endroits dans la page */
+* {
+    box-sizing:border-box;
+}
+
+html {
+	background: rgb(127,40,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgb(127,40,0) 1%, rgb(234,40,3) 38%, rgb(255,102,0) 79%, rgb(199,34,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgb(127,40,0) 1%,rgb(234,40,3) 38%,rgb(255,102,0) 79%,rgb(199,34,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgb(127,40,0) 1%,rgb(234,40,3) 38%,rgb(255,102,0) 79%,rgb(199,34,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f2800', endColorstr='#c72200',GradientType=0 ); /* IE6-9 */
+
+	font-size: 62.5%; 	
+	font-family: 'Russo One', Verdana, sans-serif; /* 'Roboto', 'Montserrat', 'Turret Road', 'Oswald', 'Josefin Sans', 'Teko', 'Righteous', 'Prompt', 'Orbitron', 'Lexend Peta', 'Cinzel', 'Concert One', 'Russo One' */	
+}
+
+body {
+	text-align: center;
+	margin: 0 auto;
+	min-width: 200px;
+	min-height: 500px;
+	max-width: 1920;
+	max-height: 1080;
+    overflow-x: hidden;
+}
+
+main {    
+    background: url(../img/pattern.png);
+    margin: 0 auto;
+    /*margin-top: 20px;*/
+}
+
+
+/* ---------------------------------------------------------- */
+/* ----------------------- HEADER --------------------------- */
+/* ---------------------------------------------------------- */
+
+header {
+    margin: 0 auto; 
+    width: 100%;
+    border-top: solid 6px black;    
+    position: relative;   	
+}
+
+header hr {
+    margin: 0 auto; 
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    border: none; 
+}
+
+h1, h1.maintitle {
+	font-family: 'Android Assassin';
+	font-size: 2em;
+	color: black;
+	text-shadow: 2px 1px #ff9900; 
+	float: none;
+    margin: 16px;
+	text-transform: uppercase;
+}
+
+nav {	
+    margin: 0 auto;
+    transition: all .35s ease;    
+}
+
+nav ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav ul li#start {
+    list-style: none;    
+}
+
+nav ul li#start ul.mob {
+    list-style: none;
+    margin: 10px auto;
+    padding: 0;
+    display: none;
+}
+
+nav ul li#start ul.mob {
+    display: none;
+}
+	
+nav ul li#start:hover > ul.mob {
+    display: block;
+}
+
+nav ul li#start ul.mob li {
+    text-align: center;    
+}
+
+nav ul li#start ul.mob li a.first {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+nav ul li#start a i.fas.fa-bars {
+    font-size: 5em;
+    color: black;
+    text-align: center;
+    border: black 2px solid;
+    border-radius: 4px;
+    padding: 8px;    
+}
+
+nav ul li#start a i.fas.fa-bars:hover {      
+    border: #ff9900 2px solid;
+    transition: border 0.35s;
+}
+
+nav a.menu, nav a.menu svg {
+     display: none;
+}
+
+nav a:link, nav a.menu:link, nav ul li#start ul.mob li a.first:link {
+	text-decoration: none;
+	color: black;	
+}
+
+nav a:hover, nav a.menu:hover, nav ul li#start ul.mob li a.first:hover {
+	color: #ff4500;
+	font-weight: normal;	
+}
+
+/* NAV EFFECT ON HOVER */
+nav a.menu {
+    padding: .2em ; 
+    position: relative;
+    text-decoration: none;
+}
+
+nav a.menu:before, nav a.menu:after {
+    content: '';
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    transition: all .35s ease;
+    opacity: 0;
+}
+
+nav a.menu:before {
+  content: '';
+  right: 0;
+  top: 0;  
+  border-right: 3px solid;   
+  transform: translate(-100%, -100%);  
+}
+
+nav a.menu:after {
+  content: '';
+  left: 0;
+  bottom: 0;  
+  border-left: 3px solid;
+  transform: translate(100%, 100%);  
+}
+
+nav a.menu:hover:before, nav a.menu:hover:after {
+    transform: translate(0,0);
+    opacity: 1;  
+}
+/* END NAV EFFECT ON HOVER */
+
+nav a:visited, nav a.menu:visited, nav li a.start ul.mob li a.first:visited {
+	color: white;	
+}
+
+nav a:active, nav a.menu:active, nav li a.start ul.mob li a.first:active {
+    color: #ff4500;
+}
+
+nav ul.link-list {
+    list-style-type: none;
+    justify-content: center;    
+    display: flex;
+    margin: 0 auto;    
+    margin-top: 0.7em;
+    padding: 0;
+}
+
+nav ul.link-list li, nav ul.link-list li.layout-right {
+    justify-content: flex-end;    
+    display: flex;
+    padding: 5px;    
+}
+
+.welcome {
+    color: white;
+    font-size: 1.3em;
+    text-align: right;
+}
+
+#canvas {
+	background: url(../img/headers/header.png) no-repeat center center;
+    background-size: cover;
+	border-top: orangered 1px solid;
+	border-bottom: orangered 2px solid;
+    width: 100%;
+    height: 100%;
+    position: relative;    
+}
+
+
+/* -----------------------------------------------------------*/
+/* ---------------------- MAIN & TEMPLATES -------------------*/
+/* -----------------------------------------------------------*/
+
+main {	
+    font-family: 'Russo One', Verdana, sans-serif;
+	font-size: 1em;    
+}
+
+a {
+  text-decoration: none;  
+}
+
+p {
+	text-align: justify;	
+}
+
+h2 {
+	font-family: 'Android Assassin';
+	font-size: 1.4em;
+	text-transform: uppercase;
+}
+
+h2:before {
+   content: url('../img/before_responsiv.png'); 
+}
+
+h2:after {
+    content: url('../img/after_responsiv.png');
+}
+
+h3 {
+	font-family: 'Android Assassin';
+	font-size: 1.3em;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: 'Verdana'; 
+	font-size: 1.05em;
+	text-transform: uppercase;
+}
+
+h5 {
+	font-family: 'Verdana';
+	font-size: 1.0em;
+	text-transform: uppercase;
+}
+
+h2 {
+	color: black;
+	text-shadow: 3px 3px darkorange;
+	text-transform: uppercase;
+}
+
+h3 {
+	color: black;
+	text-shadow: 2px 2px darkorange;
+	text-transform: uppercase;
+}
+
+h2:visited, h3:visited {
+	color: black;	
+}
+
+h1.maintitle:link, h1:link, h2:link, h3:link {
+	text-decoration: none;	
+}
+
+h1.maintitle:hover, h1:hover, h2:hover {
+	color: #ff9900;
+	text-shadow: 4px 4px black;
+}
+
+h2:hover {
+	color: darkorange;
+	text-shadow: 3px 3px black;
+}
+
+h3:hover {
+	color: darkorange;
+	text-shadow: 2px 2px black;
+}
+
+/* ------- BUTTON GO TOP ------ */
+/* ---------------------------- */
+
+#scrollUp
+{
+	position: fixed;
+	bottom : 10px;
+	right: -100px;
+	opacity: 0.6;
+}
+
+#scrollUp img {
+	width: 50px;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------ HOME VIEW + SHOW POST & COMMENTS ------------ */
+/* ---------------------------------------------------------- */
+
+section.post-view div#categoryPosts {
+    padding: 6px;    
+}
+
+section.post-view div#categoryPosts a#all, section.post-view div#categoryPosts a#bdo, section.post-view div#categoryPosts a#enhancing, section.post-view div#categoryPosts a#event, section.post-view div#categoryPosts a#tournament {
+    padding: 4px 5px;
+    color: black;
+    background-color: whitesmoke;    
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+section.post-view div#categoryPosts a#all:hover, section.post-view div#categoryPosts a#bdo:hover, section.post-view div#categoryPosts a#enhancing:hover, section.post-view div#categoryPosts a#event:hover, section.post-view div#categoryPosts a#tournament:hover {
+    background-color: lightgrey;
+}
+
+section.post-view article.post-banner, section.comments-view article.comments-banner {
+    border: 1px double black;
+    margin: 15px auto;
+    width: 80%;
+    text-align: right;
+    padding-bottom: 10px;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow : 1px 2px 5px #320064;
+    -moz-box-shadow : 1px 2px 5px #320064;
+}
+
+section.post-view article.post-banner h3.title-view, section.post-view article.post-banner p {
+    width: 100%;
+    text-align: justify;
+    padding: 6px;
+    margin: 0 auto;  
+}
+
+section.post-view article.post-banner div.contents {
+    display: block;
+}
+
+section.post-view article.post-banner div.contents img {
+    display: flex;
+    margin: 10px auto;
+    width: 87%;
+    height: 37%;
+}
+
+section.post-view article.post-banner div.contents div.tinyprobs {
+    width: 100%;
+    padding: 0;
+    margin: 6px auto;
+}
+
+section.post-view article.post-banner div.contents div.tinyprobs p { /* tiny mce prod.. */
+    padding: 0 25px;
+    margin: 10px auto;   
+}
+
+section.post-view article.post-banner div.contents div.tinyprobs ul {
+    text-align: justify;
+}
+
+section.post-view article.post-banner h3.title-view a {
+    color: black;
+	text-shadow: 2px 2px darkorange;
+}
+
+section.post-view article.post-banner h3.title-view a:hover {
+    color: darkorange;
+	text-shadow: 2px 2px black;
+}
+
+section.post-view article.post-banner h3.title-view {
+    background-image: url(../img/post-banner/BLACKSTAR.jpg);    
+}
+
+section.post-view article.post-banner div.likes {
+    padding: 0px 20px;
+    float: left;
+}
+
+section.post-view article.post-banner small {
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+}
+
+section.post-view article.post-banner small a.readmore {
+    float: left;
+    margin: 20px -7px;
+    /*padding-top: 5px;*/ 
+}
+
+section.comments-view {	
+	margin: 15px auto;
+    padding: 8px;
+	width: 80%;
+}
+
+section.comments-view article.comments-banner {
+	width: 100%;    
+}
+
+section.comments-view article.comments-banner p {
+    padding: 0px 15px;        
+    margin: 10px 0;     
+}
+
+section.comments-view article.comments-banner img.avatarComment {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+section.comments-view article.comments-banner div.likes {
+    float: left;    
+    padding: 0px 10px;
+}
+
+section.comments-view article.comments-banner small {
+    display: inline-flex;    
+    align-items: center;       
+    margin-right: 10px;
+}
+   
+
+/* ---------------------------------------------------------- */
+/* -------------------- PRODUCTS cf table ------------------- */
+/* ---------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* --------------- MEMBERS + PROFIL INFOS (logged) ---------- */
+/* ---------------------------------------------------------- */
+
+main section#members, main section#profileInform {
+    text-align: center;
+    display: flex;   
+    flex-direction: column;      
+}
+
+section#profileInform {
+    display: block;
+}
+main section#members div#invertSorts {
+    padding: 12px;
+}
+
+main section#members div#invertSorts a#btn-one, main section#members div#invertSorts a#btn-two, main section#members div#invertSorts a#btn-three {
+    padding: 4px 0px;
+    color: black;
+    background-color: whitesmoke;    
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+main section#members div#invertSorts a#btn-one:hover, main section#members div#invertSorts a#btn-two:hover, main section#members div#invertSorts a#btn-three:hover {
+    background-color: lightgrey; 
+}
+
+main section#members div.memberInfos, main section#profileInform div.profileInfos {
+	display: block;
+    width: 90%;
+    margin: 15px auto;    
+    padding-bottom: 20px;
+    border: 1px double black;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow: 1px 2px 5px #320064;
+    -moz-box-shadow: 1px 2px 5px #320064;
+}
+
+main section#members div.memberInfos div.memberInfo1 h3.memberName, main section#profileInform div.profileInfos div.profileInfo1 h3.memberName {
+    font-size: 1.5em;
+}
+
+main section#members div.memberInfos div.memberInfo1 h3.memberName:hover, main section#profileInform div.profileInfos div.profileInfo1 h3.memberName:hover {
+    color: darkorange;    
+    text-shadow: 4px 4px black;
+}
+
+main section#members div.memberInfos div.memberInfo1 img {
+	width: 150px;
+    margin: 0 auto;
+	box-shadow: #320064 2px 2px;
+}
+
+main section#profileInform div.profileInfos div.profileInfo1 img {
+    width: 150px;
+    margin-bottom: 25px;
+	box-shadow: #320064 2px 2px;
+}
+
+main section#profileInform div.profileInfos div.profileInfo1 p.memberDate {
+    text-align: center; 
+}
+
+main section#members div.memberInfos div.memberInfo1 {
+    padding: 10px 50px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main section#profileInform div.profileInfos div.profileInfo1 {   
+    margin: 0 auto;
+    width: 50%;
+}
+
+main section#profileInform div.profileInfos div.profileInfo1 input#characterp {
+    margin-bottom: 15px;   
+}
+
+main section#members div.memberInfos div.memberInfo2, main section#profileInform div.profileInfos div.profileInfo2 {
+    margin: 0 auto;
+    width: 100%;
+}
+
+main section#profileInform div.profileInfos div.profileInfo2 {
+    padding-top: 15px;
+    text-align: justify;
+    width: 50%;
+}
+
+main section#members div.memberInfos div.memberInfo2 ul {
+    margin-left: -30px;   
+}
+
+main section#members div.memberInfos div.memberInfo2 ul, main section#profileInform div.profileInfos div.profileInfo2 ul {
+	list-style: none;	
+	text-align: justify;	
+}
+
+main section#profileInform div.profileInfos div.profileInfo2 li {
+    padding-left: 15px;
+    border-left: 1px solid white;    
+}
+
+main section#members div.memberInfos div.memberInfo2 li, main section#profileInform div.profileInfos div.profileInfo2 li {
+    text-align: justify;
+    width: 100%;
+    margin: 15px auto;
+}
+
+main section#members div.memberInfos div.memberInfo2 ul li p {
+    text-align: justify;
+    margin: 0 auto;
+    width: 50%;
+    padding-left: 15px;
+    border-left: 1px solid white;
+}
+
+main section#profileInform div.profileInfos div.profileInfo2 label { 
+    padding: 0px;
+}
+
+main section#profileInform div.profileInfos div.profileInfo2 input, main section#profileInform div.profileInfos div.profileInfo2 select, main section#profileInform div.profileInfos div.profileInfo2 textarea {
+    background-color: transparent;
+    border-style: hidden;
+    width: 15em;
+}
+
+main section#members div.memberInfos div.memberInfo2 a {
+    text-decoration: none;
+    color: white;
+}
+
+main section#members div.memberInfos div.memberInfo2 a:hover {
+    color: limegreen;
+    font-weight: bold;
+}
+
+main section#profileInform div.avatars {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px auto; /* before was margin: 25px 50px;*/
+    width: 90%;
+    padding: 20px;
+    border: 1px double black;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow: 1px 2px 5px #320064;
+    -moz-box-shadow: 1px 2px 5px #320064;
+}
+
+main section#profileInform div.avatars h3.title {
+    width: 100%;
+}
+
+main section#profileInform div.avatars div.picsradio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+main section#profileInform div.avatars div.picsradio label {
+    padding: 6px;
+}
+
+span {
+	font-weight: bold;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------- WARS --------------------------- */
+/* ---------------------------------------------------------- */
+
+main section#wars {    
+    margin: 0px auto;
+    width: 90%;
+    text-align: center;
+    display: block;    
+}
+
+main section#wars div.warInfos {    
+    display: block;
+    flex-direction: row;    
+    margin: 20px;    
+    border-radius: 15px;
+    border: 2px double black;
+    box-shadow: 1px 2px 5px black;
+    background-color: whitesmoke;
+    opacity: 0.75;
+}
+
+main section#wars div.warInfos:hover {    
+    opacity: 1;
+}
+
+main section#wars div.warInfos div.warInfo {
+    padding-top: 15px;
+}
+
+main section#wars div.warInfos div.warInfo3 {
+    padding: 3px;
+    background-color: dimgrey;    
+}
+
+main section#wars div.warInfos div.warInfo4 {
+    padding: 3px;
+    background-color: grey;   
+}
+
+main section#wars div.warInfos div.warInfo5 {
+    padding: 3px;
+    background-color: lightgrey;    
+}
+
+main section#wars div.warInfos div.warInfo6 {
+    padding: 3px;    
+}
+
+main section#wars div.warInfos p, main section#wars div.warInfos p.versus {
+    text-align: center;
+}
+
+main section#wars div.warInfos p.versus {
+    font-size: 2em;    
+    margin: 5px auto;
+}
+  
+
+/* ---------------------------------------------------------- */
+/* ---------------------- ABOUT BDO ------------------------- */
+/* ---------------------------------------------------------- */
+
+main div#aboutBdo {
+    margin: 0 auto;
+	text-align: justify;
+	width: 100%;
+    margin-top: 10px;
+    margin-left: -25px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol {
+    margin-left: -15px;   
+}
+
+main div#aboutBdo ol.aboutBdo li ol li > p {
+	font-weight: normal;
+	width: 100%;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li p.world {
+	width: 100%;
+}
+
+main div#aboutBdo ol.aboutBdo li {
+	list-style: upper-roman;
+	font-weight: bold;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li {
+	list-style: upper-alpha;
+	font-weight: bold;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li > p {
+    margin-left: -15px;    
+}
+
+main div#aboutBdo ol.aboutBdo li ol li ol {
+    margin-left: -15px;   
+}
+
+main div#aboutBdo ol.aboutBdo li ol li ol li {
+	list-style: lower-alpha;
+	font-weight: bold;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li img, main div#aboutBdo ol.aboutBdo li ol li ol li img {
+	box-shadow: darkslateblue 4px 6px 2px;
+    width: 100%;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li ol li ul > li {
+	list-style: none;
+	font-weight: bold;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li ol li > ul {
+	padding: 10px 0px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li img.horses {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li iframe {
+    display: block;
+    margin: 0 auto;
+    width: 100%;    
+    box-shadow: darkslateblue 4px 6px 2px;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li img.process {    
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li img.lifeskills {    
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: -15px;
+}
+
+main div#aboutBdo ol.aboutBdo li ol li img.kzarkaloot {    
+    display: block;
+    margin: 0 auto;
+    width: 70%;    
+}
+
+main div#aboutBdo ol.aboutBdo li table.allclasses {
+    margin: 0 auto;    
+}
+
+main div#aboutBdo ol.aboutBdo li table.allclasses td {
+    padding: 10px;
+}
+
+main div#aboutBdo ol.aboutBdo li table.allclasses img {
+    border: 1px double black;
+    box-shadow: darkslateblue 2px 3px 1px;
+    width: 100%;
+    margin: 0 auto;   
+}
+
+main div#aboutBdo ol.aboutBdo li iframe {
+    display: block;
+    margin: 0 auto;
+    width: 100%;   
+    box-shadow: darkslateblue 4px 6px 2px;
+}
+
+
+/* EFFECTS ON IMAGE BDO CLASSES */
+/* --------------------------- */
+
+#classdesc {
+	position: absolute;
+	z-index: 9999;
+	color: #fff;
+	font-size: 12px;
+	width: 250px;
+	
+}
+
+#classdesc .body {
+	background-color: #000;
+	padding: 8px;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ LINKS --------------------------- */
+/* ---------------------------------------------------------- */
+
+main section#glinks {
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 50%;
+    text-align: justify;
+}
+
+main section#glinks article {
+    padding: 20px;
+}
+
+main section#glinks article a {
+    text-decoration: none;
+}
+
+main section#glinks article a:active {
+    color: darkorange;
+}
+
+main section#glinks article a:hover {
+    color: whitesmoke;
+}
+
+main section#glinks article a h4 {
+    color: #320064;
+}
+
+main section#glinks article a h4:active {
+    color: darkorange;
+}
+
+main section#glinks article a h4:hover {
+    color: whitesmoke;
+    transition: color 0.20s ease-in-out 0.2s;
+}
+
+main section#glinks article a h4:visited {
+    color: white;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ CONTACT ------------------------- */
+/* ---------------------------------------------------------- */
+
+main section#contact {   
+    text-align: center;    
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;     
+}
+
+main section#contact p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main section#contact p a {
+    text-decoration: none;
+}
+
+main section#contact p a:hover {
+    color: limegreen;
+}
+
+
+/* ---------------------------------------------------------- */
+/* --------------------- WALLPAPERS ------------------------- */
+/* ---------------------------------------------------------- */
+
+main section.flexslider {	
+	margin: 0 auto;
+	border-radius: 0;
+	width: 80%;    
+    /*height: auto; /* attention avec responsive */        
+    background: #000;
+    border: 9px double #ff4500;
+    margin-bottom: 50px;
+}
+
+main section.flexslider ul.flex-direction-nav {
+    display: none;
+}
+
+main section.wlinks {    
+    margin: 0 auto;
+    width: 100%;
+}
+
+main section.wlinks ul {
+    list-style-type: none;
+    padding-right: 40px;
+}
+
+main section.wlinks ul li {    
+    margin: 20px auto;
+    padding-left: 15px;
+    display: flex;
+}
+
+main section.wlinks ul li a {
+    text-decoration: none;
+    border-left: 1px solid white;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ STREAM -------------------------- */
+/* ---------------------------------------------------------- */
+
+main section#stream {
+    margin: 4px auto;
+    display: flex;
+}
+
+main section#stream article {
+    margin: 0 auto;    
+}
+    
+main section#stream article a img {
+    width: 160px;    
+    margin-top: 10px;
+}
+
+main section#stream article iframe {
+    width: 250px;
+    height: 160px;
+}
+
+/* ---------------------------------------------------------- */
+/* ------------------- ERRORS & SUCCESS --------------------- */
+/* ---------------------------------------------------------- */
+
+.danger, .bravo {    
+    color: black;
+    margin: 25px auto;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    border-color: black;
+    border-radius: 5px;
+    border-style: double;
+    border-width: 2px;
+}
+
+.danger {    
+    background-color: red;
+}
+
+.bravo {
+    background-color: green;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ FORMS --------------------------- */
+/* ---------------------------------------------------------- */
+
+.my-form {	
+	margin: 10px auto;
+	font-weight: bold;    
+    padding-bottom: 30px;
+    width: 90%;
+}
+
+.hidden {
+    display: none;
+}
+
+.my-form fieldset {
+    border-color: black;
+    border-radius: 5px;
+    border-style: double;
+    border-width: 10px;
+}
+
+.my-form legend {
+	font-weight: bold;	    
+    font-size: 1.2em;
+    padding: 15px;
+}
+    
+.my-form fieldset ul {
+	list-style-type: none;   
+    padding-bottom: 15px; /* padding: 15px; */
+}
+
+.my-form fieldset ul li {	    
+    margin: 1em 0;    
+}
+
+.my-form fieldset ul li.booky {    
+    text-align: center;    
+}
+
+.my-form fieldset ul li label {
+	display: block;
+	vertical-align: top;	
+    padding: 15px;
+}
+
+.my-form fieldset ul li input#title {
+    width: 50%;
+}
+
+.my-form fieldset ul li textarea#contents { 
+    width: 80%;
+}
+
+.my-form fieldset ul li article {
+    padding: 15px 0;
+}
+
+.my-form fieldset ul li article p {
+    text-align: center;
+}
+
+.my-form fieldset ul li select {
+    width: 9em;
+}
+
+.my-form fieldset ul li button, .my-form fieldset ul li a {
+	display: inline-block;
+    padding: 0.375em 1.25em;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.my-form fieldset ul li button.btn-send {
+    background-color: green;
+    color: white;
+}
+
+.my-form fieldset ul li a.btn-cancel {
+    background-color: red;
+    color: white;
+}
+
+.my-form fieldset ul li table#admin {
+	margin: 0 auto;
+	background-color: whitesmoke;
+    border-style: double;
+    border-color: peru;
+}
+
+.my-form ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------- BUTTONS IN FORM ---------------------- */
+/* ---------------------------------------------------------- */
+
+.btn-send, .btn-cancel, .btn-back1, .btn-back2 {   
+    display: inline-block;
+    margin-bottom: 1em;
+    padding: 0.375em 1.25em;   
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.6s, box-shadow 0.25s;
+}
+
+.btn-back1, .btn-back2 {    
+    color: black;
+    border-radius: 2px;    
+}
+
+.btn-back1 {
+	float: right;
+	padding-right: 20px;
+    margin-left: 40px;
+    display: none;
+}
+
+.btn-back2 {
+    padding-left: 20px;    
+}
+
+.btn-send + .btn-cancel {
+    margin-left: 1em;
+}
+
+.btn-cancel:hover {
+    background-color: #FF6633;
+    box-shadow: 0 0 4px 2px rgba(255, 102, 51, 0.5);
+    color: white;
+}
+
+.btn-send:hover {
+    background-color: #66CC99;
+    box-shadow: 0 0 4px 2px rgba(102, 204, 153, 0.5);
+    color: white;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ ADMIN --------------------------- */
+/* ---------------------------------------------------------- */
+
+.admin-panel {
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.admin-btn {    
+    margin: 0 auto;
+    width: 70%;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;    
+    padding: 20px;
+    text-decoration: none;    
+    border: 1px double black;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow : 1px 2px 5px #320064;
+    -moz-box-shadow : 1px 2px 5px #320064;
+}
+
+.admin-btn:hover {
+    color: white;
+    box-shadow: 1px 2px 5px black;
+    -webkit-box-shadow : 1px 2px 5px black;
+    -moz-box-shadow : 1px 2px 5px black;
+}
+
+a.nav {
+	font-weight: bold;
+	float: right;
+	padding: 20px 40px;
+	text-decoration: none;
+}
+
+table.admin, table.admin-prod, table.payment {
+	margin: 0 auto;    
+    width: 50%;
+    margin-top: 10px;
+}
+
+table.admin, table.payment {
+    width: 90%;    
+}
+
+table.admin tfoot {
+	font-weight: bold;
+}
+
+table.admin td {
+    width: 0;
+    padding: 4px 1px;
+}
+
+table.admin th, table.admin-prod td, table.admin-prod th, table.payment th, table.payment td {  
+    padding: 4px 0px;
+}
+
+table.admin, table.payment {
+    border: 1px double black;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow : 1px 2px 5px #320064;
+    -moz-box-shadow : 1px 2px 5px #320064;
+}
+
+table.admin thead tr, table.payment thead tr {
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+}
+
+table.admin tbody tr:nth-child(even), table.payment tbody tr:nth-child(even) {
+    background-color: orangered;
+}
+
+table.admin tbody tr:nth-child(odd), table.payment tbody tr:nth-child(odd) {   
+    background-color: transparent;
+}
+
+table.admin tbody tr:hover, table.payment tbody tr:hover {
+   background-color: #c73600;
+}
+
+table.admin tbody tr td.justif, table.payment tbody tr td.justif {
+    text-align: justify;
+}
+
+table.payment tbody tr td.justif {
+    padding: 4px 25px;    
+}
+
+table.admin tbody tr td.justif span, table.payment tbody tr td.justif span {
+    font-weight: bold;
+}
+
+table.admin th, table.payment td, table.admin th {
+    width: 21%;  
+}
+
+table.admin tbody tr td a, table.admin-prod tbody tr td a {
+	text-decoration: none;
+}
+
+table.admin caption, table.admin-prod caption, table.payment caption {
+    font-family: 'Android Assassin';
+	font-size: 1.3em;
+	margin-bottom: 20px;
+    color: black;
+    text-shadow: 2px 2px darkorange;
+}
+
+table.admin caption:hover, table.admin-prod caption:hover, table.payment caption:hover {
+    color: darkorange;
+    text-shadow: 2px 2px black;
+}
+
+table.admin-prod tbody/*, table.payment tbody */ {
+	margin: 0 auto;
+	display: flex;
+    flex-direction: column;    
+}
+
+table.admin-prod tbody tr/*, table.payment tbody tr */{
+	border: 1px double black;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 1px 2px 5px #320064;
+    -webkit-box-shadow : 1px 2px 5px #320064;
+    -moz-box-shadow : 1px 2px 5px #320064;
+}
+
+table.admin tbody tr td img {
+    width: 100%;
+}
+
+table.admin-prod tbody tr td img, table.payment tbody tr td img {
+	width: 50%;
+}
+
+table.admin-prod tbody tr td p, table.payment tbody tr td p  {
+	margin: 10px auto;
+    width: 60%;
+	text-align: center;         
+}
+
+/* CART */
+ul.nopoint li {
+    list-style: none;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------------ ASIDE --------------------------- */
+/* ---------------------------------------------------------- */
+
+.rightSide, .leftSide {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ------------------ PRODUCTS CAROUSEL --------------------- */
+/* ---------------------------------------------------------- */
+
+main .flexslider-carousel {
+    clear: both;
+	margin: 40px auto 0 auto;	
+	width: 100%;
+    border: 1px solid darkorange;    
+}
+
+main .flexslider-carousel .flex-viewport ul.slides li img {
+   width: 80%; 
+}
+
+main .flexslider-carousel  ul.flex-direction-nav {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------- */
+/* --------- SYSTEME REQUIREMENTS & BUY INFOS --------------- */
+/* ---------------------------------------------------------- */
+
+.sysreq-infos {
+    margin: 0 auto;
+    padding: 25px;
+    background-image: url("../img/syst-req-sea.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    color: black;
+    text-shadow: 1px 1px 1px darkorange;
+}    
+    
+.sysreq-infos iframe.trailer {
+    width: 225px;
+    height: 120px;
+}
+
+.sysreq-infos p.infos-prevent {
+    margin: 6px auto;
+    text-align: center;
+    font-weight: bold;    
+}
+
+.sysreq-infos .sysreq-contents h5.req {
+    font-weight: bold;
+}
+
+.sysreq-infos .sysreq-contents .sysreq {
+    color: black;
+    text-shadow: 1px 1px 1px darkorange;
+    display: flex;        
+    justify-content: space-around;
+}
+
+.sysreq-infos .sysreq-contents .sysreq .sysreq-left, .sysreq-infos .sysreq-contents .sysreq .sysreq-right {
+    width: 39%; 
+}
+
+.sysreq-infos .sysreq-contents .sysreq .sysreq-left ul, .sysreq-infos .sysreq-contents .sysreq .sysreq-right ul {
+    padding: 0;
+}
+
+.sysreq-infos .sysreq-contents .sysreq .sysreq-left ul.sysreq-ul, .sysreq-infos .sysreq-contents .sysreq .sysreq-right ul.sysreq-ul {
+    list-style: none;
+    text-align: center;
+}
+
+.sysreq-infos .buy-infos ul {
+    margin: 0 auto;
+    margin-top: 5px; 
+    padding: 20px 0;
+    list-style: none;
+}
+
+.sysreq-infos .buy-infos ul li a.website-shops {
+    color: black;
+    text-shadow: 1px 1px 1px darkorange;
+}
+
+.sysreq-infos .buy-infos ul li a.website-shops p {
+    text-align: center;
+}
+
+.sysreq-infos .buy-infos ul li a.website-shops iframe.tobuy {
+    width: 230px;
+    height: 190px;       
+}
+
+.sysreq-infos .buy-infos ul li a.website-shops img {
+    height: 165px;
+}
+
+
+/* ---------------------------------------------------------- */
+/* ---------------- LINKS BEFORE FOOTER --------------------- */
+/* ---------------------------------------------------------- */
+
+#official-links {
+    height: 90px;    
+    padding: 35px 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(232, 74, 0, 0.985), rgb(0, 0, 0, 0.93)),url(../img/bg4.jpg);    
+    border-top: 1px solid #521655;
+    display: flex;    
+    justify-content: space-evenly;
+}
+
+#official-links a img {
+    width: 125px;
+}
+
+#official-links a img:hover {
+    filter: invert(100%); 
+    -webkit-filter:invert(100%);
+    transition: filter 0.35s, -webkit-filter 0.35s;
+}
+
+
+
+/* ---------------------------------------------------------- */
+/* ----------------------- FOOTER --------------------------- */
+/* ---------------------------------------------------------- */
+
+footer {	
+	clear: both;
+	width: 100%;
+	/*height: 100px;*/
+	height: 6%;
+    border-bottom: solid 7px black;
+    outline: 1px solid white;  
+    text-align: center;
+    background-color: #ff6100;
+    font-size: 0.9em;
+    font-weight: bold;
+	display: block;
+    padding: 0 25px;
+}
+
+.foot-left, .foot-center, .foot-right {
+    width: 100%;
+    text-align: center;
+}
+
+.about-us {
+	font-size: 1.1em;
+	font-weight: bold;    
+}
+
+.about-us h3 {
+	margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 2px 2px darkorange;
+}
+
+.about-us h3:hover {
+    color: darkorange;
+    text-shadow: 2px 2px black;
+}
+
+.about-us a {
+	padding-right: 16px;
+	text-decoration: none;
+	color: #320064;    
+}
+
+.about-us a:hover {
+	color: whitesmoke;
+    transition: color 0.35s;
+}
+
+.about-us a:visited {
+	color: white;    
+}
+
+.foot-center a {
+    text-decoration: none;
+}
+
+.foot-center a h1 {
+    float: none;
+    text-shadow: 2.5px 1.5px #ff9900;
+}
+
+.foot-center a h1:hover {
+    color: darkorange; 
+    text-shadow: 2.5px 1.5px black;
+    transition: color 2s, text-shadow 2s;
+}
+
+.ends2 {
+	padding: 5px 0;	
+}
+
+.ends2 a {	
+	text-decoration: none;
+}
+
+.foot-right {	
+    display: none;
+}
+
+footer .foot-right a.logoBDO {
+    width: 200px;
+    height: 75px;
+    background-image: url(../img/BDOlogo.png);    
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: right;
+}
+
+footer .foot-right a.logoBDO:hover {
+    filter: invert(100%); 
+    -webkit-filter:invert(100%);
+    transition: filter 0.35s, -webkit-filter 0.35s;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------ RESPONSIV ---------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* ---------------------- TAB VERSION ----------------------- */
+/* ---------------------------------------------------------- */
+
+@media screen and (min-width: 568px) {
+    
+    body {
+        min-width: 300px;
+    }
+    
+    h1, h1.maintitle {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    /* ------- ANIMATION H1 ------- */
+    /* ---------------------------- */
+
+    h1.maintitle {
+        text-align: left;
+        animation: 6s infinite alternate zenith;
+        -webkit-animation: 6s infinite alternate zenith;
+    }
+
+    @keyframes zenith {
+        0% {        
+            opacity: 0;
+            transform: rotate(45deg);
+        }
+
+        17% {
+           opacity: 0; 
+        }
+
+        35% {
+            opacity: 0.25;
+            transform: rotate(0deg);
+        }
+
+        100% {        
+            transform: translateX(50px);
+            opacity: 1;
+        }    
+    }
+    
+    nav ul li#start a, nav ul li#start ul.mob li a.first {
+        display: none;
+    }    
+
+    nav a.menu {
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 6px;
+    }
+    
+    main {
+        margin-top: 0;
+        font-size: 1em;
+    } 
+    
+    nav ul.link-list {
+        display: flex;
+    } 
+    
+    /* NAV EFFECT ON HOVER */
+    nav a.menu {
+        padding: .3em ;
+    }
+    
+    
+    /* HOME VIEW 568 px */    
+    section.post-view article.post-banner {
+        width: 70%;
+    }
+    
+    section.post-view article.post-banner small a.readmore {    
+        margin: 10px 0px;
+    }    
+    
+    /* MEMBERS 568 px */    
+    main section#members div#invertSorts a#btn-one, main section#members div#invertSorts a#btn-two, main section#members div#invertSorts a#btn-three {
+        padding: 9px 15px;    
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo2 {        
+        padding-top: 50px;
+        padding-left: 30px;                        
+    }
+    
+    main section#members div.memberInfos div.memberInfo2 ul {        
+        margin: 0 50px;
+    }
+    
+    /* WARS 568 px */    
+    main section#wars {    
+        width: 70%;
+    }    
+    
+    /* ABOUT BDO 568 px */
+    main div#aboutBdo ol.aboutBdo li ol li img.kzarkaloot {
+        width: 30%;
+    }
+    
+    /* WALLPAPERS 568 px */    
+    section.wlinks ul {
+        padding-right: 0px;    
+    }
+    
+    section.wlinks ul li {        
+        padding-left: 0px; 
+        display: block;
+    }
+
+    /* STREAM 568 px */
+    main section#stream {
+        margin: 40px auto;       
+    }
+
+    main section#stream article a img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    main section#stream article iframe {
+        width: 475px;
+        height: 300px;
+    }
+    
+    /* SHOPPING 568 px */
+    table.admin tbody tr td img {
+        width: 50%;    
+    }
+    
+    /* FORM 568 px */
+    .my-form {
+        width: 80%;
+    }
+    .btn-send, .btn-cancel, .btn-back1, .btn-back2 {
+        padding: 0.875em 1.25em;    
+    }
+    
+    .btn-back1 {
+        float: left;
+        display: block;
+    }
+    
+    .btn-send {
+        float: none;
+    }
+    
+    .btn-back2 {
+        float: right;
+        display: block;
+        padding-left: 20px;
+        margin-right: 40px;
+    }
+    
+    table.payment tbody tr td.justif {
+        padding: 8px 40px;
+    }
+    
+    /* FOOTER 568 px */      
+    .about-us {
+        font-size: 1.3em;
+    }
+    
+    .foot-center a h1 {
+        font-size: 2em;
+    }
+    
+    footer .foot-right a.logoBDO {
+        width: 150px;
+        height: 50px;
+    }
+}
+
+
+/* ---------------------------------------------------------- */
+/* ---------------------- TAB VERSION ----------------------- */
+/* ---------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+    
+    body {
+        min-width: 400px;
+    }
+    
+    h1, h1.maintitle {
+        font-size: 5em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    h2:before {
+        content: url('../img/before.png'); 
+    }
+
+    h2:after {
+        content: url('../img/after.png');
+    }
+    
+    h3 {
+        font-size: 1.4em;        
+    }
+    
+    nav a, nav a.menu {
+        font-size: 1.3em;
+    }
+    
+    main {
+        margin-top: 0;
+        font-size: 1.1em;
+    }
+    
+    /* NAV EFFECT ON HOVER */
+    nav a.menu {
+        padding: .4em ;
+    }
+    
+    /* HOME VIEW 768 px */
+    section.post-view div#categoryPosts {
+        padding: 12px;    
+    }
+
+    section.post-view div#categoryPosts a#all, section.post-view div#categoryPosts a#bdo, section.post-view div#categoryPosts a#enhancing, section.post-view div#categoryPosts a#event, section.post-view div#categoryPosts a#tournament {
+        padding: 9px 15px;
+    }
+    
+    section.post-view article.post-banner {
+        width: 70%;
+    }
+    
+    section.post-view article.post-banner div.contents div.tinyprobs {
+        padding: 22px;
+    }
+    
+    /* COMMENTS 768 px */
+    section.comments-view {
+        width: 70%;
+    }
+    
+        /* MEMBERS 768 px */    
+    main section#members div.memberInfos div.memberInfo2 ul {        
+        margin: 0 175px;
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo2 {         
+        padding-left: 50px;
+    }
+    
+    /* WARS 768 px */
+    main section#wars {
+        display: flex;   
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    main section#wars div.warInfos {        
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }    
+    
+    main section#wars div.warInfos div.warInfo {
+        padding: 25px 10px;
+        width: 20%;
+    }
+
+    main section#wars div.warInfos div.warInfo1 {
+        padding: 25px 10px;
+        width: 10%;
+    }
+
+    main section#wars div.warInfos div.warInfo2 {
+        padding: 25px 10px;
+        width: 20%;
+    }
+
+    main section#wars div.warInfos div.warInfo3 {
+        padding: 25px 10px;
+        background-color: dimgrey;
+        width: 12%;
+    }
+
+    main section#wars div.warInfos div.warInfo4 {
+        padding: 25px 10px;
+        background-color: grey;
+        width: 12%;
+    }
+
+    main section#wars div.warInfos div.warInfo5 {
+        padding: 25px 10px;
+        background-color: lightgrey;
+        width: 12%;
+    }
+
+    main section#wars div.warInfos div.warInfo6 {
+        padding: 25px 10px;
+        width: 15%;
+    }
+
+    main section#wars div.warInfos p, main section#wars div.warInfos p.versus {
+        text-align: center;
+    }
+
+    main section#wars div.warInfos p.versus {
+       font-size: 2em; 
+    }    
+    
+    /* ABOUT BDO 768 px */
+    main div#aboutBdo ol.aboutBdo li ol li img.kzarkaloot {
+        width: 35%;
+    }
+    
+    /* FORM 768 px */    
+    .my-form {
+        width: 70%;
+    }
+    
+    .btn-send, .btn-cancel, .btn-back1, .btn-back2 {
+        padding: 1.075em 1.25em;    
+    } 
+    
+    /* WALLPAPERS 768 px */
+    section.wlinks {
+        padding: 50px 0;
+        margin: 0 auto;        
+    }
+    
+    section.wlinks ul li {
+        display: block;
+    } 
+    
+    section.wlinks ul li a {
+        display: flex;    
+        justify-content: center;    
+        width: 50%;
+        margin: 0 auto;
+        line-height: 30px;
+    }
+    
+    section.flexslider {
+        width: 65%;
+        height: 375px;
+        margin-bottom: 100px;
+    }
+    
+    /* STREAM 768 px */
+    main section#stream {
+        margin: 50px auto;        
+    }
+
+    main section#stream article a img {
+        width: 400px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+    
+    main section#stream article iframe {
+        width: 610px;
+        height: 400px;
+    }
+    
+    /* FORM 768 px */
+    
+    table.payment tbody tr td.justif {
+        padding: 12px 65px;
+    }
+    
+    /* FOOTER 768 px */ 
+    
+    footer {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    } 
+    
+    .about-us {
+	   font-size: 1.3em;
+        float: left;
+    }
+    
+    .about-us h3 {
+        margin: 16px 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .foot-left {
+	   width: 40%;
+    }
+    
+    .foot-center {
+        margin-top: 15px;
+        width: 40%;
+        text-align: center;
+    }
+    
+    .foot-center a h1 {
+        font-size: 2.8em;
+    }
+    
+    .foot-right {
+        display: block;
+        width: 40%;
+    }
+    
+    footer .foot-right a.logoBDO {
+        width: 175px;
+        height: 55px;    
+    }
+}
+
+/* ---------------------------------------------------------- */
+/* --------------------- SCREEN VERSION --------------------- */
+/* ---------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+    
+    body {
+        min-width: 700px;
+    }
+    
+    h1, h1.maintitle {
+        float: left;
+        font-size: 6em;
+    }
+    
+    h2 {
+        font-size: 2.3em;
+    }
+    
+    h3, table.admin caption, table.admin-prod caption {
+        font-size: 1.5em;
+    }
+    
+    nav {	
+        float: right;   
+        padding-top: 8px;
+        padding-right: 16px;
+        margin-bottom: -6px;        
+    }
+    
+    nav a, nav a.menu {
+        margin-left: 15px;
+        font-size: 1.5em;
+    }
+
+    nav a.menu svg {
+        margin-bottom: -23px;
+        height: 50px;
+        width: 80px;
+        display: inline;
+    }
+    
+    nav ul.link-list {        
+        justify-content: flex-end;
+    }
+    
+    main {
+        margin-top: 100px;
+        font-size: 1.3em;        
+    }
+    
+    /* NAV EFFECT ON HOVER */
+    nav a.menu {
+        padding: .7em ;
+    }
+    
+    /* HOME VIEW 1024 px */
+    section.post-view article.post-banner {
+        width: 50%;
+    }
+    /*
+    section.post-view article.post-banner small {
+        margin: 0 10px;
+    }*/
+    
+    section.post-view article.post-banner h3.title-view, section.post-view article.post-banner p {
+        padding: 25px; 
+    }
+    
+    section.post-view article.post-banner div.contents {
+        display: flex;
+        padding-bottom: 12px;
+        width: 100%;
+    }
+
+    section.post-view article.post-banner div.contents img {
+        display: flex;
+        margin: 15px 0 0 15px;
+        width: 37%;
+    }
+    
+    section.post-view article.post-banner div.contents div.tinyprobs {
+        width: 57%;
+        padding: 30px;        
+    }
+    
+    section.post-view article.post-banner div.contents div.tinyprobs p { 
+        padding: 0px 25px;
+        margin: 20px auto;   
+    }
+    
+    section.post-view article.post-banner small {
+        margin: 0 10px;
+    }
+    
+    section.post-view article.post-banner small a.readmore {
+        float: left;
+        margin: 5px 0px; 
+    }   
+
+    /* COMMENTS 1024 */
+    section.comments-view {	
+        margin: 50px auto;
+        padding: 25px;
+        width: 50%;
+    }
+
+    section.comments-view article.comments-banner {
+        width: 100%;    
+    }
+
+    section.comments-view article.comments-banner p {
+        padding: 0px 25px;        
+        margin: 20px 0;     
+    }
+
+    section.comments-view article.comments-banner img.avatarComment {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+    }
+
+    section.comments-view article.comments-banner div.likes {
+        float: left;
+        margin: 35px 0;
+        padding: 10px 15px;
+    }
+
+    section.comments-view article.comments-banner small {
+        display: inline-flex;    
+        align-items: center;       
+        margin-right: 20px;
+    }
+    
+    /* MEMBERS 1024 px */    
+    main section#members div.memberInfos, main section#profileInform div.profileInfos {
+        margin: 0 auto;
+        width: 95%;
+        display: flex;        
+    }
+    
+    main section#members div.memberInfos {
+        margin: 20px auto;  
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo1 {
+        padding: 10px 50px;
+        margin: 0 auto;
+        width: 50%;    
+    }
+    
+    main section#members div.memberInfos div.memberInfo1 h2.memberName {
+        font-size: 2em;
+    }
+    
+    main section#members div.memberInfos div.memberInfo2 li {        
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    main section#members div.memberInfos div.memberInfo1 h3.memberName, main section#profileInform div.profileInfos div.profileInfo1 h3.memberName {
+        font-size: 2.4em;
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo1 img {
+        width: 325px;
+    }
+    
+    main section#members div.memberInfos div.memberInfo2 {
+        margin-top: 5em;
+        width: 100%;
+        padding-right: 25px;   
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo2 {
+        padding-top: 50px;
+        width: 50%;
+        text-align: justify;
+        padding-left: 50px;   
+    }
+    
+    main section#profileInform div.profileInfos div.profileInfo2 li {
+        padding: 0 15px;
+    }
+    
+    main section#members div.memberInfos div.memberInfo2 ul {
+        margin: 0 auto;    
+    }
+    
+    main section#members div.memberInfos div.memberInfo2 ul li p {
+        width: 100%; 
+    }
+    
+    main section#members div.memberInfos div.memberInfo1 img {
+        width: 220px;
+        margin-bottom: 25px;
+    }
+    
+    /* WARS 1024 px */
+    
+    main section#wars {
+        width: 50%;    
+    }
+    
+    /* ABOUT BDO 1024 px */
+    main div#aboutBdo {
+        width: 50%;
+        margin: 40px auto;
+	    text-align: justify;
+    }
+      
+    main div#aboutBdo ol.aboutBdo li ol li img.kzarkaloot {
+        width: 40%;
+    }
+    
+    /* WALLPAPERS 1024 px */
+    main section.flexslider {
+        width: 50%;        
+        height: 549px; /* attention avec responsive */  
+    }
+    
+    main section.wlinks {
+        width: 60%;
+    }
+
+    /* STREAM 1024 px */
+    main section#stream {
+        margin: 100px auto;        
+    }
+
+    main section#stream article a img {
+        width: 620px;
+        margin-bottom: 25px;
+        margin-top: 0px;
+    }
+    
+    main section#stream article iframe {
+        width: 620px;
+        height: 378px;
+    }
+    
+    /* FORM 1024 px */        
+    .my-form {
+        width: 50%;
+    }
+    
+    .btn-send, .btn-cancel, .btn-back1, .btn-back2 {        
+       /* padding: 1.475em 1.25em;*/
+        padding: 0.375em 1.25em;
+    }
+    
+    /* ADMIN 1024 px */
+    
+    table.admin, table.admin-prod, table.payment {
+        margin: 40px auto;
+    }
+    
+    table.admin, table.payment {
+        width: 50%;
+    }
+    
+    table.admin-prod tbody {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    table.admin-prod tbody tr {        
+        margin: 15px auto;        
+    }
+    
+    table.admin td {
+        width: 0;
+        padding: 4px 1px;
+    }
+    
+    table.admin th, table.admin-prod td, table.admin-prod th {
+        padding: 8px 12px;
+    }    
+
+    table.payment tbody tr td.justif {
+        padding: 20px 100px;        
+    }
+    
+    /* ASIDES */    
+    aside.rightSide, aside.leftSide {
+        display: inline-block;
+        vertical-align: top;
+        width: 23%;
+        padding: 25px;
+    }
+
+    aside.rightSide {
+        float: right;
+    }
+
+    aside.leftSide {
+        float: left;
+    }
+
+    aside.rightSide img, aside.leftSide img {
+        width: 300px;
+    }
+
+    div.right-banner1, div.right-banner2, div.right-banner3, div.right-banner0 {
+        margin: 15px auto;
+    }
+
+    div.left-banner1, div.left-banner2, div.left-banner3 {
+        margin: 15px auto;
+    }
+
+    aside.rightSide div.right-banner2 section#rb2 {
+        color: white;
+    }
+
+    aside form.theme-switcher fieldset.switcher {
+        width: 300px;    
+        margin: 0 auto;
+        padding: 15px;
+        line-height: 25px;
+        text-align: justify;
+        border: 1px solid darkorange;
+    }
+    
+    aside.leftSide div.left-banner3 section#lb3 div.boss-timer {
+        max-width: 300px;
+        margin: 0 auto;
+        border: 1px solid darkorange;  
+    }    
+    
+    aside form.theme-switcher fieldset.switcher legend.switch-legend {
+        font-weight: bold;    
+    }
+    
+    /* BOSS TIMER DE ASIDE LEFT */
+    #boss-picture > img {
+        width: 150px;
+    }
+    
+    /* RECENT POSTS DE ASIDE LEFT */
+    div.left-banner2 section.recent-posts-lb2 {               
+        margin: 0 auto;        
+        width: 300px;
+    }
+
+    div.left-banner2 section.recent-posts-lb2 h3 {
+        background-image: url(../img/post-banner/BLACKSTAR.jpg);
+        padding: 15px;
+        margin: 0 auto;
+        border: 1px double black;
+    }
+    
+    div.left-banner2 section.recent-posts-lb2 article.post-banner {
+        border: 1px double black;
+        padding: 0 10px 10px;
+    }
+    
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small {
+       margin: 0 auto;
+    }
+    
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small h3.title-view, aside .left-banner2 section.recent-posts-lb2 article.post-banner small p {    
+        width: 100%;        
+        padding: 0;
+        margin: 0 auto;
+        text-align: justify;        
+        line-height: 2em;
+    }
+
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small a {
+        color: black;
+        text-shadow: 1px 1px white;
+    }
+
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small a:hover {
+        color: red;
+        text-shadow: 1px 1px black;
+    }
+
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small h3.title-view {
+        color: black;
+        text-shadow: 2px 2px darkorange;
+    }
+    
+    div.left-banner2 section.recent-posts-lb2 article.post-banner small p.right {
+        font-weight: normal;
+        text-align: right;        
+    }
+    
+    /* BEST VIDEOS ASIDE RIGHT */
+    aside section#rb4 {
+        margin: 0 auto;        
+        width: 300px;
+    }
+    
+    aside section#rb4 h3 {
+        background-image: url(../img/post-banner/BLACKSTAR.jpg);
+        padding: 15px;
+        margin: 0 auto;
+        border: 1px double black;
+    }
+
+    .hidden {
+        display: none;
+    }
+    
+    /* CARROUSSEL 1024 px */
+    
+    main .flexslider-carousel .flex-viewport ul.slides li img {
+        width: 125%;
+    }
+    
+    /* SYSTEME REQUIREMENTS 1024 px */
+    
+    .sysreq-infos {
+        background-size: 100% 100%;    
+    }   
+    
+    .sysreq-infos iframe {
+        width: 560px;
+        height: 315px;
+    }
+    
+    .sysreq-infos .buy-infos ul {        
+        margin-top: 75px;
+    }
+    
+    .sysreq-infos .buy-infos ul li a.website-shops iframe {
+        width: 640px;
+        height: 190px;       
+    }
+    
+    .sysreq-infos .buy-infos ul li a.website-shops img {
+        height: 190px;
+    }
+    
+    /* LINKS 1024 px */
+    
+    #official-links {
+        height: 125px;
+        padding: 35px;
+    }
+    
+    #official-links a img {
+        width: 250px;
+    }
+    
+    /* FOOTER 1024 px */
+    
+    .about-us {
+	   font-size: 1.6em;
+    }
+
+    .about-us h3 {
+        margin: 16px 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .foot-left {
+        width: 33%;
+    }
+    
+    .foot-center {	
+        width: 33%;
+        text-align: center;
+    }
+    
+    .foot-center a h1 {
+        font-size: 5.5em;
+    }
+    
+    .foot-right {
+        width: 33%;
+    }
+    
+    .foot-right a.logoBDO {
+        width: 300px;
+        height: 100px;
+    }    
+}

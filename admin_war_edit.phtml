@@ -1,0 +1,84 @@
+<!-- Page d'édition d'un match -->
+<h2><i class="fas fa-fist-raised"></i> Edit War</h2>
+
+<!-- PAGE ADMIN EDIT WAR -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend><i class="fa fa-check"></i> Characteristics (plz use logo in jpg, 60x60 pixels and same name as guild) </legend>
+        <ul>
+            <li>
+                <label for="us">Us :</label>
+                <input id="us" type="text" name="us" value="<?= $war['Us'] ?>">
+            </li>
+            <li>
+                <label class="addlogo" for="addlogo">Our logo :</label>
+                <input id="uslogo" type="file" name="usLogo" value="<?= $war['UsLogo'] ?>">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label for="opponent">Opponent :</label>
+                <input id="opponent" type="text" name="opponent" value="<?= $war['Opponent'] ?>">
+            </li>
+            <li>
+                <label class="addlogo" for="addlogo">Opponent logo :</label>
+                <input id="opponentlogo" type="file" name="opponentLogo" value="<?= $war['OpponentLogo'] ?>">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label for="day">Day :</label>
+                <select id="day" name="day" class="lvl">
+                    <option value="<?= $war['Day'] ?>"><?= $war['Day'] ?></option>
+                    <option value="Dimanche">Dimanche</option>
+					<option value="Lundi">Lundi</option>
+					<option value="Mardi">Mardi</option>
+					<option value="Mercredi">Mercredi</option>
+					<option value="Jeudi">Jeudi</option>
+					<option value="Vendredi">Vendredi</option>
+					<option value="Samedi">Samedi</option>
+                </select>
+            </li> 
+        </ul>
+        <ul>
+            <li>
+                <label for="node">Node :</label>
+                <select id="node" name="node" class="lvl">
+                    <option value="<?= $war['Node'] ?>"><?= $war['Node'] ?></option>                    
+                    <option value="Balenos">Balenos</option>
+                    <option value="Serendia">Serendia</option>
+                    <option value="Mediah">Mediah</option>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Calpheon">Calpheon</option>
+                </select>
+            </li> 
+        </ul>
+        <ul>
+            <li>
+                <label for="tier">Tier :</label>
+                <select id="tier" name="tier" class="lvl">
+                    <option value="<?= $war['Tier'] ?>"><?= $war['Tier'] ?></option>
+                    <option value="Tier 1 easy">Tier 1 easy</option>
+					<option value="Tier 1 middle">Tier 1 middle</option>
+					<option value="Tier 1 hard">Tier 1 hard</option>
+					<option value="Tier 2">Tier 2</option>
+					<option value="Tier 3">Tier 3</option>
+                    <option value="Tier 4">Tier 4</option>
+                </select>
+            </li> 
+        </ul>
+        <ul>
+            <li>
+                <label for="score">Score :</label>
+                <input id="score" type="text" name="score" value="<?= $war['Score'] ?>">
+            </li> 
+        </ul>
+    </fieldset>
+    <ul>
+        <li>
+            <input class="btn-send" type="submit" name="editWar" value="Update">
+            <a class="btn-cancel" href="admin_wars.php">Cancel</a>
+        </li>
+    </ul>
+</form>
+<!-- END PAGE ADMIN EDIT WAR -->

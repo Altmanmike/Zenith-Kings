@@ -1,0 +1,105 @@
+<!-- Page d'article de blog détaillé avec les commentaires -->
+<h2><i class="fas fa-file-invoice"></i> Article</h2>
+
+<!-- PAGE POST+COMMENTS -->
+<section class="post-view">
+    <article class="post-banner">                             
+        <!-- Lien vers l'article du blog détaillé avec tous les commentaires -->                
+        <h3 class="title-view"><?= htmlspecialchars($post['Title']) ?></h3>
+        <div class="contents">
+            <img src="img/posts/<?= $post['Picture'] ?>" alt="">
+            <div class="tinyprobs">
+                <?= $post['Contents'] ?>  
+            </div>                      
+        </div>
+        <div class="likes">
+            <?php if(isAuth() == True): ?>
+                <?php if($LikePostVal == 1): ?>
+                <?php { ?>
+                        <a id="liked" name="btn-lkd" href="show_post.php?id=<?= intval($_GET['id']) ?>&commentId=NULL&btn-lkd=<?= $LikePostVal ?>"><i class="far fa-thumbs-down"></i> <?= intval($nbLikesPost['nblikesarticles']) ?> Je n'aime plus! </a>
+                <?php } ?>
+                <?php elseif($LikePostVal == 0): ?>
+                <?php { ?>
+                        <a id="liked" name="btn-lkd" href="show_post.php?id=<?= intval($_GET['id']) ?>&commentId=NULL&btn-lkd=<?= $LikePostVal ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesPost['nblikesarticles']) ?> J'aime! </a>
+                <?php } ?>
+                <?php else: ?> 
+                <?php { ?>
+                        <a href="show_post.php?id=<?= intval($_GET['id']) ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesPost['nblikesarticles']) ?> J'aime!</a>
+                <?php } ?>
+                <?php endif; ?>
+            <?php else: ?>
+            <?php { ?>
+                    <a href="show_post.php?id=<?= intval($_GET['id']) ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesPost['nblikesarticles']) ?> J'aime!</a>
+            <?php } ?>
+            <?php endif; ?>            
+        </div>
+        <small>
+            <i class="far fa-calendar-check"></i> Wrote by <?= htmlspecialchars($post['FamilyName']) ?> <?= htmlspecialchars($post['CharacterName']) ?>
+            at <?= htmlspecialchars($post['CreationTimestamp']) ?>, <i class="far fa-comments"></i> <?= intval($nbComments['nbcommentaires']) ?> comments
+        </small>
+    </article>
+</section>
+
+<a class="btn-back1" href="index.php">Back <i class="fas fa-arrow-right"></i></a>
+<a class="btn-back2" href="index.php"><i class="fas fa-arrow-left"></i> Back</a>
+<br/>
+
+<!-- COMMENTS -->
+<section class="comments-view"><?php $cpt=0; ?>
+    <?php foreach($comments as $comment): ?>
+        <article class="comments-banner">            
+            <?= $comment['Contents'] ?>
+            <div class="likes">
+                <?php if(isAuth() == True): ?>
+                    <?php if($LikeCommentVal[$cpt][0] == 1): ?>
+                    <?php { ?>
+                            <a id="liked" name="btn-lkd" href="show_post.php?id=<?= intval($_GET['id']) ?>&commentId=<?= intval($comment['Id']) ?>&btn-lkd=<?= $LikeCommentVal[$cpt][0] ?>"><i class="far fa-thumbs-down"></i> <?= intval($nbLikesComment[$cpt][0]['nbLikesCommentaires']) ?> Je n'aime plus! </a>
+                    <?php } ?>
+                    <?php elseif($LikeCommentVal[$cpt][0] == 0): ?>
+                    <?php { ?>
+                            <a id="liked" name="btn-lkd" href="show_post.php?id=<?= intval($_GET['id']) ?>&commentId=<?= intval($comment['Id']) ?>&btn-lkd=<?= $LikeCommentVal[$cpt][0] ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesComment[$cpt][0]['nbLikesCommentaires']) ?> J'aime! </a>
+                    <?php } ?>
+                    <?php else: ?> 
+                    <?php { ?>
+                            <a href="show_post.php?id=<?= intval($_GET['id']) ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesComment[$cpt][0]['nbLikesCommentaires']) ?> J'aime!</a>
+                    <?php } ?>
+                    <?php endif; ?>
+                <?php else: ?>
+                <?php { ?>
+                        <a href="show_post.php?id=<?= intval($_GET['id']) ?>"><i class="far fa-thumbs-up"></i> <?= intval($nbLikesComment[$cpt][0]['nbLikesCommentaires']) ?> J'aime!</a> 
+                <?php } ?>
+                <?php endif; ?>            
+            </div>
+            <small>
+                <img class="avatarComment" src="img/avatars/<?= htmlspecialchars($comment['Avatar']) ?>" alt="">&nbsp;<?= htmlspecialchars($comment['FamilyName']) ?>&nbsp;<?= htmlspecialchars($comment['CharacterName']) ?>&nbsp;<i class="far fa-comment"></i>&nbsp;at <?= htmlspecialchars($comment['CreationTimestamp']) ?>
+            </small>
+        </article>        
+    <?php $cpt++; ?>
+    <?php endforeach; ?>
+</section>
+
+<?php if(isAuth() == True): ?>
+<?php { ?>
+    <!-- ADD COMMENT -->
+    <form class="my-form" action="" method="POST">
+
+        <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
+        <input type="hidden" name="postId" value="<?= intval($_GET['id']) ?>">
+
+        <fieldset>
+            <legend><i class="fa fa-comment"></i> New comments</legend>
+            <ul>
+                <li>
+                    <label class="textarea" for="Contents">Your comments :</label>
+                    <textarea id="contents" name="contents" rows="5"></textarea>
+                </li>
+                <li>
+                    <button class="btn-send" type="submit" name="addComment">Add</button>
+                    <a class="btn-cancel" href="index.php">Cancel</a>
+                </li>
+            </ul>
+        </fieldset>
+    </form>    
+<?php } ?>
+<?php endif; ?>  
+<!-- END PAGE POST+COMMENTS -->

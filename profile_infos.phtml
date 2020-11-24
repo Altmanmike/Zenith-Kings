@@ -1,0 +1,171 @@
+<!-- Page d'édition de compte -->
+<h2><i class="fas fa-user-edit"></i> Profile</h2>
+
+<!-- PAGE PROFILE INFOS -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+	<fieldset>
+		<legend><i class="fa fa-book"></i> Identity and personal informations</legend>		
+            <section id="profileInform">
+                <div class="profileInfos">
+                    <div class="profileInfo1">
+                        <h3 class="memberName"><?= htmlspecialchars($member['CharacterName']) ?> (<?= htmlspecialchars($member['FamilyName']) ?>)</h3>     
+                        <img src="img/members_icons/<?= htmlspecialchars($member['CharacterPic']) ?>" alt="head image character cutomized" >
+                        <p class="memberDate">
+                            Member since the <?= date("d l F", strtotime(substr(htmlspecialchars($member['CreationTimestamp']), 0, 10))) ?><br><br><br>
+                            <label for="characterpic"><span>Change picture method: </span></label><br><br>
+                        <p>
+                            First, you must find the right path folder of you .bmp characters pics files:<br><br> "C:\Users\UserName\Documents\Black Desert\FaceTexture"<br><br>
+                            Second, use software to see your class and convert the pic .bmp to .jpg file..<br><br>
+                            Third, rename your pic like this format: "CharacterName(FamilyName).jpg"<br><br>
+                            And, enter your new character picture here:<br><br>
+                        </p>                        
+                            <input id="characterpic" type="file" name="characterPic" value="<?= $member['CharacterPic'] ?>">
+                                                                       
+                    </div>
+                    <div class="profileInfo2">
+                        <h3>Member Informations</h3>
+                        <ul>
+                            <li>
+                                <label for="firstName"><span>Firstname:</span></label>
+                                <input id="firstName" type="text" name="firstname" value="<?= $member['FirstName'] ?>" autofocus>
+                            </li>
+                            <li>
+                                <label for="lastName"><span>Lastname:</span></label>
+                                <input id="lastName" type="text" name="lastname" value="<?= $member['LastName'] ?>">
+                            </li>
+                            <br>
+                            <li>
+                                <label for="familyName"><span>Family name:</span></label>
+                                <input id="familyName" type="text" name="familyname" value="<?= $member['FamilyName'] ?>">
+                            </li>
+                            <li>
+                                <label for="characterName"><span>Character name:</span></label> 
+                                <input id="characterName" type="text" name="charactername" value="<?= $member['CharacterName'] ?>">
+                            </li>                            
+                            <li>
+                                <label for="characterclass"><span>Class played:</span></label> 
+                                <select name="characterclass" class="lvl"><?= htmlspecialchars($member['CharacterClass']) ?>
+                                    <option value="<?= $member['CharacterClass'] ?>"><?= $member['CharacterClass'] ?></option>
+                                    <option value="Warrior">Warrior</option>
+                                    <option value="Ranger">Ranger</option>
+                                    <option value="Wizard">Wizard</option>
+                                    <option value="Witch">Witch</option>
+                                    <option value="Musa">Musa</option>
+                                    <option value="Maehwa">Maehwa</option>
+                                    <option value="Sorceress">Sorceress</option>
+                                    <option value="Dark Knight">Dark Knight</option>
+                                    <option value="Ninja">Ninja</option>
+                                    <option value="Valkyrie">Valkyrie</option>
+                                    <option value="Tamer">Tamer</option>
+                                    <option value="Kunoichi">Kunoichi</option>
+                                    <option value="Berserker">Berserker</option>
+                                    <option value="Striker">Striker</option>
+                                    <option value="Mystic">Mystic</option>
+                                    <option value="Lhan">Lhan</option>
+                                    <option value="Archer">Archer</option>
+                                    <option value="Shai">Shai</option>
+                                    <option value="Guardian">Guardian</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="characterLevel"><span>Level Character:</span></label>
+                                <select id="characterLevel" name="characterlevel" class="lvl">
+                                    <option value="<?= $member['CharacterLevel'] ?>"><?= $member['CharacterLevel'] ?></option>
+                                    <?php for($characterLevel = 54; $characterLevel <= 67; $characterLevel++): ?>
+                                        <option value="<?= $characterLevel ?>"><?= $characterLevel ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="statusinguild"><span>Status in the guild:</span></label>
+                                <select name="statusinguild" class="lvl">
+                                    <option value="<?= $member['StatusInGuild'] ?>"><?= $member['StatusInGuild'] ?></option>
+                                    <option value="New">New</option>
+                                    <option value="Master Quarter">Master Quarter</option>
+                                    <option value="General">General</option>
+                                    <option value="Officer">Officer</option>
+                                    <option value="Grand Master">Grand Master</option>
+                                </select>
+                            </li>
+                            <br>
+                            <li>
+                                <label for="email"><span>Email:</span></label>
+                                <input id="email" type="email" name="email" value="<?= $member['Email'] ?>">
+                            </li>
+                            <li>
+                                <label for="password"><span>Password:</span></label>
+                                <input id="password" type="password" name="password" value="<?= $member['Password'] ?>">
+                            </li>
+                            <br>
+                            <li>
+                                <label for="birthday"><span>Birthdate :</span></label>
+                                <select id="birthday" name="birthday">
+                                    <option value="<?= substr($member['BirthDate'], 8, 2) ?>"><?= substr($member['BirthDate'], 8, 2) ?></option>
+                                    <?php for($day = 1; $day <= 31; $day++): ?>
+                                        <option value="<?= $day ?>"><?= $day ?></option>
+                                    <?php endfor; ?>
+                                </select>                                
+                                <select name="birthmonth">
+                                    <option value="0"><?= date('M', strtotime($member['BirthDate'])) ?></option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>                                
+                                <select name="birthyear">
+                                    <option value="<?= substr($member['BirthDate'], 0, 4) ?>"><?= substr($member['BirthDate'], 0, 4) ?></option>
+                                    <?php for($year = 1960; $year <= date('Y') - 18; $year++): ?>
+                                        <option value="<?= $year; ?>"><?= $year; ?></option>
+                                    <?php endfor; ?>
+                                </select>
+			                 </li>
+                            <li>
+                                <label for="address"><span>Address:</span></label>
+                                <textarea id="address" name="address" rows="3"><?= $member['Address'] ?></textarea>
+                            </li>
+                            <li>
+                                <label for="city"><span>City:</span></label>
+                                <input id="city" type="text" name="city" value="<?= $member['City'] ?>">
+                            </li>
+                            <li>
+                                <label for="country"><span>Country:</span></label>
+                                <input id="country" type="text" maxlength="10" name="country" value="<?= $member['Country'] ?>">
+                            </li>
+                            <li>
+                                <label for="zipcode"><span>ZipCode:</span></label>
+                                <input id="zipcode" type="text" maxlength="5" name="zipcode" value="<?= $member['ZipCode'] ?>">
+                            </li>
+                            <li>
+                                <label for="phone"><span>Phone:</span></label>
+                                <input id="phone" type="text" maxlength="10" name="phone" value="<?= $member['Phone'] ?>">
+                            </li>			
+                        </ul>
+                    </div>
+                </div>
+                <div class="avatars">                    
+                    <h3 class="title">Choose your personal avatar for comments</h3>                    
+                    <?php for($i = 1;$i <= 55; $i++): ?>
+                    <div class="picsradio">
+                        <label for="avatars"><img src="img/avatars/<?= $i ?>.gif" alt="quelques avatars"></label>
+                        <input type="radio" name="avatarRadio" value="<?= $i ?>.gif">
+                    </div>
+                    <?php endfor; ?>                
+                </div>
+            </section>        
+    </fieldset>
+    <ul>
+		<li>
+			<input class="btn-send" type="submit" name="editAccount" value="Update">
+			<a class="btn-cancel" href="index.php">Cancel</a>
+		</li>
+	</ul>
+</form>
+<!-- END PAGE PROFILE INFOS -->

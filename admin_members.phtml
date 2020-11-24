@@ -1,0 +1,32 @@
+<!-- Page d'administration: éditions et suppression des infos des membres -->
+<h2><i class="fas fa-horse-head"></i> Members</h2>
+
+<!-- ADMIN PAGE MEMBERS -->
+<table class="admin">
+    <caption>Liste des membres</caption>
+    <thead>
+        <tr>
+            <th>FamilyName</th>            
+            <th>Class</th>
+            <th>Level</th>            
+            <th>Grade</th>
+            <th>Admin</th>
+            <th>Edit</th>
+            <th>Ban</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($members as $member): ?>
+            <tr>
+                <td><?= htmlspecialchars($member['FamilyName']) ?></td>                
+                <td><?= htmlspecialchars($member['CharacterClass']) ?></td>
+                <td><?= htmlspecialchars($member['CharacterLevel']) ?></td>
+                <td><?= htmlspecialchars($member['StatusInGuild']) ?></td>                
+                <td><a href="admin_member_admin.php?id=<?= intval($member['Id']) ?>"><?= htmlspecialchars($member['Admin']) ?></a></td>
+                <td><a href="admin_member_edit.php?id=<?= intval($member['Id']) ?>"><i class="fa fa-pencil"></i></a></td>
+                <td><a href="admin_member_delete.php?id=<?= intval($member['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+            </tr>
+        <?php endforeach ?>     
+    </tbody>
+</table>
+<!-- END ADMIN PAGE MEMBERS -->

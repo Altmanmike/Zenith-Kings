@@ -1,0 +1,35 @@
+<!-- Page d'administration: éditions et suppression des infos des produits -->
+<h2><i class="fas fa-box"></i> Products</h2>
+
+<!-- ADMIN PAGE PRODUCTS -->
+<nav>
+    <a href="admin_product_add.php">Ajouter un nouveau produit</a>
+</nav>
+
+<table class="admin">
+    <caption>Liste des produits</caption>
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Del</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($products as $product): ?>
+            <tr>
+                <td><img src="img/products/<?= htmlspecialchars($product['Photo']) ?>" alt="<?= htmlspecialchars($product['Name']) ?>"></td><td><?= htmlspecialchars($product['Name']) ?></td>
+                <td><?= htmlspecialchars($product['Description']) ?></td>
+                <td><?= htmlspecialchars($product['QuantityInStock']) ?></td>
+                <td><?= htmlspecialchars($product['SalePrice']) ?> €</td>
+                <td><a href="admin_product_edit.php?id=<?= intval($product['Id']) ?>"><i class="fa fa-pencil"></i></a></td>
+                <td><a href="admin_product_delete.php?id=<?= intval($product['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+            </tr>
+        <?php endforeach ?>     
+    </tbody>
+</table>
+<!-- END ADMIN PAGE PRODUCTS --> 

@@ -1,0 +1,20 @@
+<!-- Page de liste des produits du site -->
+<h2><i class="fas fa-globe-europe"></i> Products</h2>
+
+<!-- PAGE PRODUCTS -->
+<table class="admin-prod">
+    <caption>See our products</caption>
+    <tbody>
+        <?php foreach($products as $product): ?>
+            <tr>
+                <td>    
+                    <p><a href="product_infos.php?id=<?= $product['Id']; ?>"><strong><?= $product['Name']; ?></strong></a></p>                 
+                    <img src="img/products/<?= $product['Photo']; ?>" alt="<?= $product['Name']; ?>">
+                    <p><?= $product['Description']; ?></p>
+                    <p><strong><?= number_format($product['SalePrice'], 2) ?></strong> €</p>
+                </td>                
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<!-- END PAGE PRODUCTS -->

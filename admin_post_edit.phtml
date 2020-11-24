@@ -1,0 +1,61 @@
+<!-- Page d'édition d'un article -->
+<h2><i class="fas fa-pen-nib"></i> Edit Post</h2>
+
+<!-- Affichage de retour messages -->
+<?php if($successMessage): ?>
+    <p><?php printSuc($successMessage); ?></p>
+<?php endif; ?>
+
+<?php if($errorMessage): ?>
+    <p><?php printEach($errorMessage); ?></p>
+<?php endif; ?>
+
+<!-- PAGE ADMIN EDIT POST -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+
+    <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
+    <input type="hidden" name="postId" value="<?= intval($post['Id']) ?>">
+
+    <fieldset>
+        <legend><i class="fa fa-check"></i> Characteristics (Please insert images in jpg/jpeg)</legend>
+        <ul>
+            <li>
+                <label for="title">Title :</label>
+                <input id="title" type="text" name="title" value="<?= $post['Title'] ?>">
+            </li>
+            <li>
+                <label for="picture">Image :</label>
+                <input id="picture" type="file" name="picture" value="<?= $post['Picture'] ?>">
+            </li>
+            <li>
+                <label class="textarea" for="contents">Contents :</label>
+                <textarea id="contents" name="contents" rows="8"><?= $post['Contents'] ?></textarea>
+            </li>
+            <li>
+                <label for="memberId">Admin :</label>
+                <select id="memberId" type="text" name="memberId">
+                    <option value="1">sx77</option>
+                </select>
+            </li> 
+            <li>
+                <label for="categoryId">Category :</label>
+                <select id="categoryId" type="text" name="categoryId">
+                    <option value="1">Black Desert Online</option>
+                    <option value="2">Enhancing</option>
+                    <option value="3">Event</option>
+                    <option value="4">Tournament</option>
+                    <option value="5">MMORPG</option>
+                    <option value="6">Zenith Kings</option>
+                    <option value="7">Video Games</option>
+                </select>
+            </li> 
+        </ul>
+    </fieldset>
+    <ul>
+        <li>
+            <input class="btn-send" type="submit" name="editPost" value="Update">
+            <a class="btn-cancel" href="admin_posts.php">Cancel</a>
+        </li>
+    </ul>
+</form>
+<!-- END PAGE ADMIN EDIT POST -->

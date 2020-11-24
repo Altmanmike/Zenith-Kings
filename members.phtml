@@ -1,0 +1,50 @@
+<!-- Page de présentation du leader, de ses officiers et autres membres -->
+<h2><i class="fas fa-horse-head"></i> Members</h2>
+
+<!-- MEMBERS PAGE -->    
+<section id="members">    
+    <h3>See our members</h3>
+    
+    <div id="invertSorts">        
+        <?php if($sort == "ASC"): ?>
+        <?php { ?>
+            <a id="btn-one"     name="btn1" href="?btn1=<?= $sort ?>">Sort by level <i class="fas fa-sort-up"></i></a>
+            <a id="btn-two"     name="btn2" href="?btn2=<?= $sort ?>">Sort by grade <i class="fas fa-sort-up"></i></a>
+            <a id="btn-three"   name="btn3" href="?btn3=<?= $sort ?>">Sort by class <i class="fas fa-sort-up"></i></a>
+        <?php } ?>
+        <?php elseif($sort == "DESC"): ?>
+        <?php { ?>
+            <a id="btn-one"     name="btn1" href="?btn1=<?= $sort ?>">Sort by level <i class="fas fa-sort-down"></i></a>
+            <a id="btn-two"     name="btn2" href="?btn2=<?= $sort ?>">Sort by grade <i class="fas fa-sort-down"></i></a>
+            <a id="btn-three"   name="btn3" href="?btn3=<?= $sort ?>">Sort by class <i class="fas fa-sort-down"></i></a>
+        <?php } ?>
+        <?php else: ?>
+        <?php { ?>
+            <a id="btn-one"     name="btn1" href="?btn1=<?= $sort ?>">Sort by level <i class="fas fa-sort-up"></i></a>
+            <a id="btn-two"     name="btn2" href="?btn2=<?= $sort ?>">Sort by grade <i class="fas fa-sort-up"></i></a>
+            <a id="btn-three"   name="btn3" href="?btn3=<?= $sort ?>">Sort by class <i class="fas fa-sort-up"></i></a>
+        <?php } ?>
+        <?php endif; ?>        
+    </div>   
+    
+    <?php foreach($members as $member): ?>    
+        <div class="memberInfos">
+            <div class="memberInfo1">
+                <h3 class="memberName"><?= htmlspecialchars($member['CharacterName']) ?> (<?= htmlspecialchars($member['FamilyName']) ?>)</h3>     
+                <img src="img/members_icons/<?= htmlspecialchars($member['CharacterPic']) ?>" alt="head image character cutomized" >
+            </div>
+            <div class="memberInfo2">
+                <h3>More Informations</h3>
+                <ul>                    
+                    <li><p><span>Level Character:</span> <?= htmlspecialchars($member['CharacterLevel']) ?></p></li>
+                    <li><p><span>Status in the guild:</span> <?= htmlspecialchars($member['StatusInGuild']) ?></p></li>
+                    <li><p><span>Class played:</span> <?= htmlspecialchars($member['CharacterClass']) ?></p></li>
+                    <li><p><span>Country:</span> <?= htmlspecialchars($member['Country']) ?></p></li>
+                    <li><p><span>Family name in game:</span> <?= htmlspecialchars($member['FamilyName']) ?></p></li>
+                    <li><p><span>Character name in game:</span> <?= htmlspecialchars($member['CharacterName']) ?></p></li>				
+                </ul>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</section>
+<!-- END MEMBERS PAGE -->

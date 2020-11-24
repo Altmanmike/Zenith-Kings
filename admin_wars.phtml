@@ -1,0 +1,32 @@
+<!-- Page d'administration: éditions et suppression des infos des géoconflits -->
+<h2><i class="fas fa-meteor"></i> Node Wars</h2>
+
+<!-- ADMIN PAGE NODE WARS -->
+<nav>
+    <a href="admin_war_add.php">Ajouter un nouveau match</a>
+</nav>
+
+<table class="admin">
+    <caption>Liste des geoconflits</caption>
+    <thead>
+        <tr>
+            <th>Us</th>            
+            <th>Opponent</th>
+            <th>Day</th>
+            <th>Edit</th>
+            <th>Del</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($wars as $war): ?>
+            <tr>
+                <td><?= htmlspecialchars($war['Us']) ?></td>                
+                <td><?= htmlspecialchars($war['Opponent']) ?></td>
+                <td><?= htmlspecialchars($war['Day']) ?> le <?= htmlspecialchars(substr($war['CreationTimestamp'], 8, 2)) ?>/<?= htmlspecialchars(substr($war['CreationTimestamp'], 5, 2)) ?></td>
+                <td><a href="admin_war_edit.php?id=<?= intval($war['Id']) ?>"><i class="fa fa-pencil"></i></a></td>
+                <td><a href="admin_war_delete.php?id=<?= intval($war['Id']) ?>"><i class="fa fa-remove"></i></a></td>
+            </tr>
+        <?php endforeach ?>     
+    </tbody>
+</table>
+<!-- END ADMIN PAGE NODE WARS -->

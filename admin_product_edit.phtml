@@ -1,0 +1,51 @@
+<!-- Page d'édition d'un produit -->
+<h2><i class="fas fa-box"></i> Edit Product</h2>
+
+<!-- Affichage de retour messages -->
+<?php if($successMessage): ?>
+    <p><?php printSuc($successMessage); ?></p>
+<?php endif; ?>
+
+<?php if($errorMessage): ?>
+    <p><?php printEach($errorMessage); ?></p>
+<?php endif; ?>
+
+<!-- PAGE ADMIN EDIT WAR -->
+<form class="my-form" action="" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend><i class="fa fa-check"></i> Characteristics</legend>
+        <ul>
+            <li>
+                <label for="name">Name :</label>
+                <input id="name" type="text" name="name" value="<?= $product['Name'] ?>">
+            </li>
+            <li>
+                <label class="addphoto" for="addphoto">Photo :</label>
+                <input id="addphoto" type="file" name="addPhoto" value="<?= $product['Photo'] ?>">
+            </li>
+            <li>
+                <label for="description">Description :</label>
+                <input id="description" type="textarea" name="description" value="<?= $product['Description'] ?>">
+            </li>
+            <li>
+                <label for="quantityinstock">QuantityInStock :</label>
+                <input id="quantityinstock" type="text" name="quantityInStock" value="<?= $product['QuantityInStock'] ?>">
+            </li>
+            <li>
+                <label for="buyprice">BuyPrice :</label>
+                <input id="buyprice" type="text" name="buyPrice" value="<?= $product['BuyPrice'] ?>">
+            </li> 
+            <li>
+                <label for="saleprice">SalePrice :</label>
+                <input id="saleprice" type="text" name="salePrice" value="<?= $product['SalePrice'] ?>">
+            </li> 
+        </ul>    
+    </fieldset>
+    <ul>
+        <li>
+            <input class="btn-send" type="submit" name="editProduct" value="Update">
+            <a class="btn-cancel" href="admin_products.php">Cancel</a>
+        </li>
+    </ul>
+</form>
+<!-- END PAGE ADMIN EDIT WAR -->
