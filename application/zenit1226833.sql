@@ -213,7 +213,7 @@ CREATE TABLE `Order` (
   `CostOfPortage` double NOT NULL,
   `Total` double NOT NULL,
   `CreationTimestamp` datetime NOT NULL DEFAULT current_timestamp(),
-  `CompleteTimestamp` datetime NOT NULL
+  `CompleteTimestamp` datetime NOT NULL DEFAULT '0000-00-00 00:00:00';
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

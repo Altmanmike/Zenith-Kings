@@ -2,8 +2,8 @@
 	//	Connexion à la base de données
 	$pdo = new PDO
 	(
-		'mysql:host=xxxxxxx;dbname=xxxxxx;charset=UTF8',
-		'',
+		'mysql:host=localhost;dbname=zenithkings;charset=UTF8',
+		'root',
 		'',
 	    [
 	    	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
